@@ -49,7 +49,7 @@ def calc_distance_math(lon_cent, lat_cent, lon_obj, lat_obj):
 def generate_final_data():
     '''Generates the final data to analyse with the earthquake and gdp data merged in same dataframe'''
 
-    print('Finish generate_final_data.py')
+    print('Start generate_final_data.py')
     total_start = time.process_time()
 
     # importing csvs for earthquakes and gdp data
