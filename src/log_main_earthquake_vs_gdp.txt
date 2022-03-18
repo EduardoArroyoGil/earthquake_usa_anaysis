@@ -1,0 +1,13 @@
+START MAIN PROCEDURE
+Start generate_csv.py
+     --> Start reading consolidated_data.csv
+     Finish reading consolidated_data.csv -->
+
+     --> Start transformation
+     Finish transformation -->
+
+     --> Start saving 01.earthquakes_clean_data.csv
+     Finish saving 01.earthquakes_clean_data.csv -->
+
+Finish generate_csv.py
+FINISH MAIN PROCEDURE
