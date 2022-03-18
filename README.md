@@ -19,6 +19,6 @@ The data is taken from Kaggle and FRED
 ## Conclusions:
 
 
-
+You can find a deeper analysis here
 
 ![](/images/usa_gdp-vs-mag.png)
