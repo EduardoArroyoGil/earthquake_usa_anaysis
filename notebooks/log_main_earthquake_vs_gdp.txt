@@ -1,0 +1,50 @@
+START MAIN PROCEDURE
+
+Start generate_csv.py
+     --> Start reading consolidated_data.csv...
+     ...Finish reading consolidated_data.csv (duration: 0.21 min) -->
+
+     --> Start transformation...
+     ...Finish transformation (duration: 0.02 min) -->
+
+     --> Start saving 01.earthquakes_clean_data.csv...
+     ...Finish saving 01.earthquakes_clean_data.csv (duration: 0.06 min) -->
+
+Finish generate_csv.py (total duration: 0.29 min)
+
+Start generate_gdp_state.py
+     --> Start setting API key...
+     ...Finish setting API key (duration: 0.0 min) -->
+
+     --> Start getting coordinates...
+     ...Finish getting coordinates (duration: 0.02 min) -->
+
+     --> Start calculate dataframe with gdp data...
+     ...Finish calculate dataframe with gdp data (duration: 0.01 min) -->
+
+     --> Start saving 02.fred_gdp_usa.csv...
+     ...Finish saving 02.fred_gdp_usa.csv (duration: 0.0 min) -->
+
+Finish generate_gdp_state.py (total duration: 0.03 min)
+
+Start generate_final_data.py
+     --> Start importing csvs for earthquakes and gdp data...
+     ...Finish importing csvs for earthquakes and gdp data (duration: 0.01 min) -->
+
+     --> Start renaming columns for both csvs...
+     ...Finish renaming columns for both csvs (duration: 0.0 min) -->
+
+     --> Start merging both data frames: earthquakes and gdps...
+     ...Finish merging both data frames: earthquakes and gdps (duration: 0.06 min) -->
+
+     --> Start calculation of the distance...
+     ...Finish calculation of the distance (duration: 16.92 min) -->
+
+     --> Start filtering just the events that has a distance less than 600 km...
+     ...Finish filtering just the events that has a distance less than 600 km (duration: 0.22 min) -->
+
+     --> Start saving 03.df_data_mag_gdp.csv...
+     ...Finish saving 03.df_data_mag_gdp.csv (duration: 0.2 min) -->
+
+Finish generate_final_data.py (total duration: 17.41 min)
+FINISH MAIN PROCEDURE (general duration: 17.75 min)
