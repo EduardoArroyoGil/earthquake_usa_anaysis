@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-
+import time
 
 def get_year(time):
     time = str(time)
@@ -10,10 +10,13 @@ def get_year(time):
 
 def generate_csv():
     print('Start generate_csv.py')
+    total_start = time.process_time()
 
-    print('     --> Start reading consolidated_data.csv')
+    print('     --> Start reading consolidated_data.csv...')
+    start = time.process_time()
     df = pd.read_csv("../data/consolidated_data.csv")
-    print('     Finish reading consolidated_data.csv -->\n')
+    duration = round((time.process_time() - start)/60, 2)
+    print(f'     ...Finish reading consolidated_data.csv (duration: {duration} min) -->\n')
 
     # choosing earthquakes and the metric 'ml' wich means
 
@@ -25,7 +28,8 @@ def generate_csv():
     # In the central and eastern United States, NEIC also computes ML, but restricts the distance range to 0-150 km.
     # In that area it is only authoritative if there is no mb_Lg as well as no mb or moment magnitude.
 
-    print('     --> Start transformation')
+    print('     --> Start transformation...')
+    start = time.process_time()
     df_data = df[(df.type == 'earthquake') & (df.magType == 'ml')]
     df_data = df_data.drop(columns=['Unnamed: 0', 'depth',
                                     'magType', 'nst', 'gap', 'dmin', 'rms', 'net', 'id', 'updated',
@@ -34,13 +38,14 @@ def generate_csv():
 
     df_data['year'] = df_data['time'].apply(get_year)
     df_data = df_data.drop(columns=['time'])
-    print('     Finish transformation -->\n')
+    duration = round((time.process_time() - start)/60, 2)
+    print(f'     ...Finish transformation (duration: {duration} min) -->\n')
 
-    print('     --> Start saving 01.earthquakes_clean_data.csv')
+    print('     --> Start saving 01.earthquakes_clean_data.csv...')
+    start = time.process_time()
     df_data.to_csv("../data/01.earthquakes_clean_data.csv")
-    print('     Finish saving 01.earthquakes_clean_data.csv -->\n')
+    duration = round((time.process_time() - start)/60, 2)
+    print(f'     ...Finish saving 01.earthquakes_clean_data.csv (duration: {duration} min) -->\n')
 
-    print('Finish generate_csv.py')
-
-
-generate_csv()
+    duration = round((time.process_time() - total_start)/60, 2)
+    print(f'Finish generate_csv.py (total duration: {duration} min)\n')

@@ -7,6 +7,7 @@ from pandas_profiling import ProfileReport
 from fredapi import Fred
 import geopy
 from geopy.geocoders import Nominatim
+import time
 
 
 def naming(code):
@@ -69,21 +70,24 @@ def get_coordinates(states_name_code):
 def generate_gdp_state():
     '''Function that generates gdp data and save it into a csv file'''
 
-    import pandas as pd
-    import numpy as np
-    from geopy import geocoders
-    from geopy.geocoders import Nominatim
-    import wbgapi as wb
-    from pandas_profiling import ProfileReport
-    from fredapi import Fred
-    import geopy
-    from geopy.geocoders import Nominatim
+    # import pandas as pd
+    # import numpy as np
+    # from geopy import geocoders
+    # from geopy.geocoders import Nominatim
+    # import wbgapi as wb
+    # from pandas_profiling import ProfileReport
+    # from fredapi import Fred
+    # import geopy
+    # from geopy.geocoders import Nominatim
     print('Start generate_gdp_state.py')
+    total_start = time.process_time()
 
     # red apy key
-    print('     --> Start setting API key')
+    print('     --> Start setting API key...')
+    start = time.process_time()
     fred = Fred(api_key='70e6406526da042e6e900cae78b217e1')
-    print('     Finish setting API key -->\n')
+    duration = round((time.process_time() - start)/60,2)
+    print(f'     ...Finish setting API key (duration: {duration} min) -->\n')
 
     # states code for get the metric of GDP for each state
     states_code = ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE',
@@ -112,12 +116,15 @@ def generate_gdp_state():
     }
 
     # calculates the coordinates for each state
-    print('     --> Start getting coordinates')
+    print('     --> Start getting coordinates...')
+    start = time.process_time()
     states_name_coord = get_coordinates(states_name_code)
-    print('     Finish getting coordinates -->\n')
+    duration = round((time.process_time() - start)/60,2)
+    print(f'     ...Finish getting coordinates (duration: {duration} min) -->\n')
 
     # calculates the dataframe with the gdp data for each state by date
-    print('     --> Start calculate dataframe with gdp data')
+    print('     --> Start calculate dataframe with gdp data...')
+    start = time.process_time()
 
     data = pd.DataFrame()
     for i in states_code:
@@ -137,13 +144,15 @@ def generate_gdp_state():
     # calculating year
     data['year'] = data['year'].apply(get_year)
 
-    print('     Finish calculate dataframe with gdp data -->\n')
+    duration = round((time.process_time() - start)/60,2)
+    print(f'     ...Finish calculate dataframe with gdp data (duration: {duration} min) -->\n')
 
     # saving data into csv file
-    print('     --> Start saving 02.fred_gdp_usa.csv')
+    print('     --> Start saving 02.fred_gdp_usa.csv...')
+    start = time.process_time()
     data.to_csv("../data/02.fred_gdp_usa.csv")
-    print('     Finish saving 02.fred_gdp_usa.csv -->\n')
+    duration = round((time.process_time() - start)/60,2)
+    print(f'     ...Finish saving 02.fred_gdp_usa.csv (duration: {duration} min) -->\n')
 
-    print('Finish generate_gdp_state.py')
-
-generate_gdp_state()
+    duration = round((time.process_time() - total_start) / 60, 2)
+    print(f'Finish generate_gdp_state.py (total duration: {duration} min)\n')

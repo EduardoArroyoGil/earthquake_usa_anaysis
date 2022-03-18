@@ -1,6 +1,7 @@
 import pandas as pd
 import geopy.distance
 from math import sin, cos, sqrt, atan2, radians
+import time
 
 
 def calc_distance(x_cent, y_cent, x_obj, y_obj):
@@ -49,41 +50,53 @@ def generate_final_data():
     '''Generates the final data to analyse with the earthquake and gdp data merged in same dataframe'''
 
     print('Finish generate_final_data.py')
+    total_start = time.process_time()
 
     # importing csvs for earthquakes and gdp data
-    print('     --> Start importing csvs for earthquakes and gdp data')
+    print('     --> Start importing csvs for earthquakes and gdp data...')
+    start = time.process_time()
     df_eq = pd.read_csv("../data/01.earthquakes_clean_data.csv").drop(columns=['Unnamed: 0'])
     df_gdp = pd.read_csv("../data/02.fred_gdp_usa.csv").drop(columns=['Unnamed: 0'])
-    print('     Finish importing csvs for earthquakes and gdp data -->\n')
+    duration = round((time.process_time() - start)/60, 2)
+    print(f'     ...Finish importing csvs for earthquakes and gdp data (duration: {duration} min) -->\n')
 
     # renaming columns for both csvs
-    print('     --> Start renaming columns for both csvs')
+    print('     --> Start renaming columns for both csvs...')
+    start = time.process_time()
     df_eq = df_eq.rename(columns={"latitude": "latitude_eq", "longitude": "longitude_eq"})
     df_gdp = df_gdp.rename(columns={"latitude": "latitude_gdp", "longitude": "longitude_gdp"})
-    print('     Finish renaming columns for both csvs -->\n')
+    duration = round((time.process_time() - start)/60, 2)
+    print(f'     ...Finish renaming columns for both csvs (duration: {duration} min) -->\n')
 
     # merging both data frames: earthquakes and gdps
-    print('     --> Start merging both data frames: earthquakes and gdps')
+    print('     --> Start merging both data frames: earthquakes and gdps...')
+    start = time.process_time()
     df_merged = pd.merge(df_eq, df_gdp, how="inner", left_on='year', right_on='year')
-    print('     Finish merging both data frames: earthquakes and gdps -->\n')
+    duration = round((time.process_time() - start)/60, 2)
+    print(f'     ...Finish merging both data frames: earthquakes and gdps (duration: {duration} min) -->\n')
 
     # calculation of the distance between the coordinates of each states and each seismic event
-    print('     --> Start calculation of the distance')
+    print('     --> Start calculation of the distance...')
+    start = time.process_time()
     df_merged['distance'] = df_merged.apply(
         lambda my_data: calc_distance_math(my_data['longitude_gdp'], my_data['latitude_gdp'], my_data['longitude_eq'],
                                            my_data['latitude_eq']), axis=1)
-    print('     Finish calculation of the distance -->\n')
+    duration = round((time.process_time() - start)/60, 2)
+    print(f'     ...Finish calculation of the distance (duration: {duration} min) -->\n')
 
     # filtering just the events that has a distance less than 600 km
-    print('     --> Start filtering just the events that has a distance less than 600 km')
+    print('     --> Start filtering just the events that has a distance less than 600 km...')
+    start = time.process_time()
     df_data = df_merged[(df_merged.distance <= 600)]
-    print('     Finish filtering just the events that has a distance less than 600 km -->\n')
+    duration = round((time.process_time() - start)/60, 2)
+    print(f'     ...Finish filtering just the events that has a distance less than 600 km (duration: {duration} min) -->\n')
 
     # saving data into a csv file
-    print('     --> Start saving 03.df_data_mag_gdp.csv')
+    print('     --> Start saving 03.df_data_mag_gdp.csv...')
+    start = time.process_time()
     df_data.to_csv("../data/03.df_data_mag_gdp.csv")
-    print('     Finish saving 03.df_data_mag_gdp.csv -->\n')
+    duration = round((time.process_time() - start)/60, 2)
+    print(f'     ...Finish saving 03.df_data_mag_gdp.csv (duration: {duration} min) -->\n')
 
-    print('Finish generate_final_data.py')
-
-generate_final_data()
+    duration = round((time.process_time() - total_start) / 60, 2)
+    print(f'Finish generate_final_data.py (total duration: {duration} min)')
