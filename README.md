@@ -16,6 +16,8 @@ The objective of this project is to find the level of affection of an earthquake
 ##   Data:
 The data is taken from [Kaggle](https://www.kaggle.com/danielpe/earthquakes) refered to the [USGS data](https://earthquake.usgs.gov/earthquakes/feed/v1.0/csv.php) and feeded by [FRED API](https://fred.stlouisfed.org/docs/api/fred/). Therefore both data will be merged by year and by state of USA.
 
+To refresh and check the process running [click here](/notebooks/Process%20Trigger.ipynb)
+
 ##   Folder Structure:
 The folder structure is based on four folders:
   * **/data**: where is located the inicial data (*consolidated_data.csv*) of the earthquakes and that data cleaned (*01.earthquakes_clean_data.csv*), the data obtained from [FRED API](https://fred.stlouisfed.org/docs/api/fred/) (*02.fred_gdp_usa.csv*), transformed and enriched data (*03.df_data_mag_gdp.csv*) and other data generated for rest of analysis process.
