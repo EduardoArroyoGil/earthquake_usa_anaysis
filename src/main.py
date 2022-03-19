@@ -8,7 +8,7 @@ import src.generate_final_data as gfinaldata
 import src.analysis as analysis
 
 
-sys.stdout = open("log_main_earthquake_vs_gdp.txt", "w")
+sys.stdout = open("../src/log_main_earthquake_vs_gdp.txt", "w")
 
 print('START MAIN PROCEDURE\n')
 general_start = time.process_time()

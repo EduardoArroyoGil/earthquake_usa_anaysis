@@ -8,7 +8,12 @@ from fredapi import Fred
 import geopy
 from geopy.geocoders import Nominatim
 import time
+import os
+from dotenv import load_dotenv
+from pathlib import Path
 
+dotenv_path = Path("../src/.env")
+load_dotenv(dotenv_path=dotenv_path)
 
 def naming(code):
     '''Function that return the name of the code state'''
@@ -85,7 +90,8 @@ def generate_gdp_state():
     # red apy key
     print('     --> Start setting API key...')
     start = time.process_time()
-    fred = Fred(api_key='70e6406526da042e6e900cae78b217e1')
+    token = os.getenv("FRED_APIKEY")
+    fred = Fred(api_key=token)
     duration = round((time.process_time() - start)/60,2)
     print(f'     ...Finish setting API key (duration: {duration} min) -->\n')
 
