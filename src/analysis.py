@@ -4,7 +4,7 @@ import plotly
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import time
-
+import pickle
 
 def get_df_state(state, df):
     '''This function create a dataframe for the state indicated with the metrics grouped for each year'''
@@ -188,6 +188,15 @@ def analysis():
 
     duration = round((time.process_time() - start)/60, 2)
     print(f'     ...Finish generation of graphs for the whole USA (duration: {duration} min) -->\n')
+
+    # open file for writing
+    f = open("../data/graphs.pkl", "wb")
+
+    # write the python object (dict) to pickle file
+    pickle.dump(graphs, f)
+
+    # close file
+    f.close()
 
     duration = round((time.process_time() - total_start) / 60, 2)
     print(f'Finish analysis.py (total duration: {duration} min)')
