@@ -31,5 +31,6 @@ The folder structure is based on four folders:
 
 
 ![](/images/usa_gdp-vs-mag.png)
+![](/images/usa_growth_gdp-vs-mag.png)
 
 for more datails you can find them [here](/notebooks/Earthquake%20Analysis.ipynb)
