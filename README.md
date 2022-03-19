@@ -20,17 +20,15 @@ To refresh and check the process running [click here](/notebooks/Process%20Trigg
 
 ##   Folder Structure:
 The folder structure is based on four folders:
-  * **/data**: where is located the inicial data (*consolidated_data.csv*) of the earthquakes and that data cleaned (*01.earthquakes_clean_data.csv*), the data obtained from [FRED API](https://fred.stlouisfed.org/docs/api/fred/) (*02.fred_gdp_usa.csv*), transformed and enriched data (*03.df_data_mag_gdp.csv*) and other data generated for rest of analysis process.
-  * **/images**: in this folder images needed for the project and the ones generated with graphs to explain the realtion between GDP and eartthquakes are stored for following usage.
-  * **/noteboooks**: in here jupyter notbooks are saved to explain a deeper analysis and an analysis of the procedure how it has been run describing it with a log
-  * **/src**: soruce folder is focused to store all the ".py" files that generates all the data for the analysis. The sturcutre of the code is based on the main.py file that calls the other ".py" files in order and generates the log to check if everything has been going well.
+  * **/data**: Where is located the inicial data (*consolidated_data.csv*) of the earthquakes and that data cleaned (*01.earthquakes_clean_data.csv*), the data obtained from [FRED API](https://fred.stlouisfed.org/docs/api/fred/) (*02.fred_gdp_usa.csv*), transformed and enriched data (*03.df_data_mag_gdp.csv*) and other data generated for rest of analysis process.
+  * **/images**: In this folder images needed for the project and the ones generated with graphs to explain the realtion between GDP and eartthquakes are stored for following usage.
+  * **/noteboooks**: In here jupyter notbooks are saved to explain a deeper analysis and an analysis of the procedure how it has been run describing it with a log
+  * **/src**: Soruce folder (*src*) is focused to store all the ".py" files that generates all the data for the analysis. The sturcutre of the code is based on the main.py file that calls the other ".py" files in order and generates the log to check if everything has been going well.
   
 ##   Conclusions:
-
-
-
+In general we see ...
 
 ![](/images/usa_gdp-vs-mag.png)
 ![](/images/usa_growth_gdp-vs-mag.png)
 
-for more datails you can find them [here](/notebooks/Earthquake%20Analysis.ipynb)
+For more datails you can find them [here](/notebooks/Earthquake%20Analysis.ipynb)
