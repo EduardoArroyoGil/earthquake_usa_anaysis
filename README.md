@@ -22,3 +22,5 @@ The data is taken from Kaggle and FRED
 
 
 ![](/images/usa_gdp-vs-mag.png)
+
+for more datails you can find them [here](/notebooks/Earthquake%20Analysis.ipynb)
