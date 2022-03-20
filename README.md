@@ -34,9 +34,9 @@ In general we see ...
 For more datails you can find them [here](/notebooks/Earthquake%20Analysis.ipynb)
 
 ## Libraries:
-[sys](https://docs.python.org/3/library/sys.html)
-[requests](https://pypi.org/project/requests/2.7.0/)
-[pandas](https://pandas.pydata.org/)
-[dotenv](https://pypi.org/project/python-dotenv/)
-[os](https://docs.python.org/3/library/os.html)
-[re](https://docs.python.org/3/library/re.html)
+* [sys](https://docs.python.org/3/library/sys.html)
+* [requests](https://pypi.org/project/requests/2.7.0/)
+* [pandas](https://pandas.pydata.org/)
+* [dotenv](https://pypi.org/project/python-dotenv/)
+* [os](https://docs.python.org/3/library/os.html)
+* [re](https://docs.python.org/3/library/re.html)
