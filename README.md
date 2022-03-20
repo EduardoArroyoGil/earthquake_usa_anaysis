@@ -14,7 +14,7 @@ That is why it would be interesting to measure how earthquakes affect the econom
 The objective of this project is to find the level of affection of an earthquake to society in a certain region for various regions of the USA. Mainly to the GDP of the study area.
 
 ##   Data:
-The data is taken from [Kaggle](https://www.kaggle.com/danielpe/earthquakes) refered to the [USGS data](https://earthquake.usgs.gov/earthquakes/feed/v1.0/csv.php) and feeded by [FRED API](https://fred.stlouisfed.org/docs/api/fred/). Therefore both data will be merged by year and by state of USA.
+The data is taken from [Kaggle](https://www.kaggle.com/danielpe/earthquakes) refered to the [USGS data](https://earthquake.usgs.gov/earthquakes/feed/v1.0/csv.php) (to understand better and deeper the data set click [here](notebooks/Scanning%20Earthquake%20Dataset.ipynb)) and feeded by [FRED API](https://fred.stlouisfed.org/docs/api/fred/). Therefore both data will be merged by year and by state of USA.
 
 To refresh and check the process running [click here](/notebooks/Process%20Trigger.ipynb)
 
