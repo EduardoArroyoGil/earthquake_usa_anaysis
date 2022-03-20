@@ -7,8 +7,19 @@ from pandas_profiling import ProfileReport
 from fredapi import Fred
 import geopy
 from geopy.geocoders import Nominatim
+
 import time
 
+import requests
+import re
+from bs4 import BeautifulSoup
+
+import os
+from dotenv import load_dotenv
+from pathlib import Path
+
+dotenv_path = Path("../src/.env")
+load_dotenv(dotenv_path=dotenv_path)
 
 def naming(code):
     '''Function that return the name of the code state'''
@@ -85,17 +96,23 @@ def generate_gdp_state():
     # red apy key
     print('     --> Start setting API key...')
     start = time.process_time()
-    fred = Fred(api_key='70e6406526da042e6e900cae78b217e1')
+    token = os.getenv("FRED_APIKEY")
+    fred = Fred(api_key=token)
     duration = round((time.process_time() - start)/60,2)
     print(f'     ...Finish setting API key (duration: {duration} min) -->\n')
 
-    # states code for get the metric of GDP for each state
-    states_code = ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE',
-                   'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA',
-                   'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV',
-                   'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA',
-                   'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV',
-                   'WI', 'WY']
+    # states code for get the metric of GDP for each state by web scrapping
+    url = 'https://www.stateabbreviations.us/'
+
+    html = requests.get(url)
+    soup = BeautifulSoup(html.content, "html.parser")
+
+    codes = soup.find_all("table", {"class": "f"})
+
+    patron = '[A-Z]{2}'
+    states_code = re.findall(patron, codes[0].getText())
+    states_code.remove('US')
+    states_code.sort()
 
     # name of the GDP metric in fred api
     metric = 'NGSP'
