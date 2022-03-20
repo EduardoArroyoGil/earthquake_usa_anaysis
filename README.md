@@ -30,6 +30,7 @@ In general we see ...
 
 ![](/images/usa_gdp-vs-mag.png)
 ![](/images/usa_growth_gdp-vs-mag.png)
+Note: the seismic magnitude is ML which is explain in [here]((notebooks/Scanning%20Earthquake%20Dataset.ipynb))
 
 For more datails you can find them [here](/notebooks/Earthquake%20Analysis.ipynb)
 
