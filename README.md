@@ -26,7 +26,7 @@ The folder structure is based on four folders:
   * **/src**: Soruce folder (*src*) is focused to store all the ".py" files that generates all the data for the analysis. The sturcutre of the code is based on the main.py file that calls the other ".py" files in order and generates the log to check if everything has been going well.
   
 ##   Conclusions:
-In general we see ...
+We can see in general that when **a peak of ML happen is follow by a stalling or decresing of growth of GDP or Net GDP**.
 
 <img src="/images/usa_gdp-vs-mag.png" alt="drawing" width="375"/> <img src="/images/usa_growth_gdp-vs-mag.png" alt="drawing" width="375"/>
 
