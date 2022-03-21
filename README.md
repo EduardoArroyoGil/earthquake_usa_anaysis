@@ -26,12 +26,13 @@ The folder structure is based on four folders:
   * **/src**: Soruce folder (*src*) is focused to store all the ".py" files that generates all the data for the analysis. The sturcutre of the code is based on the main.py file that calls the other ".py" files in order and generates the log to check if everything has been going well.
   
 ##   Conclusions:
-In general we see ...
+We can see in general that when **a peak of ML happen is follow by a stalling or decresing of growth of GDP or Net GDP**.
 
-![](/images/usa_gdp-vs-mag.png)
-![](/images/usa_growth_gdp-vs-mag.png)
+<img src="/images/usa_gdp-vs-mag.png" alt="drawing" width="375"/> <img src="/images/usa_growth_gdp-vs-mag.png" alt="drawing" width="375"/>
 
-For more datails you can find them [here](/notebooks/Earthquake%20Analysis.ipynb)
+*Note: the seismic magnitude is ML which is explain in [here](notebooks/Scanning%20Earthquake%20Dataset.ipynb)*
+
+For more datails in an analytical sense, you can find them [here](notebooks/Earthquake%20Analysis.ipynb)
 
 ## Libraries:
 * [sys](https://docs.python.org/3/library/sys.html)
@@ -40,3 +41,12 @@ For more datails you can find them [here](/notebooks/Earthquake%20Analysis.ipynb
 * [dotenv](https://pypi.org/project/python-dotenv/)
 * [os](https://docs.python.org/3/library/os.html)
 * [re](https://docs.python.org/3/library/re.html)
+* [time](https://docs.python.org/3/library/time.html)
+* [geopy](https://geopy.readthedocs.io/en/stable/)
+* [fredapi](https://github.com/mortada/fredapi)
+* [pathlib](https://docs.python.org/3/library/pathlib.html)
+* [bs4](https://pypi.org/project/bs4/)
+* [requests](https://pypi.org/project/requests/)
+* [math](https://docs.python.org/3/library/math.html)
+* [plotly](https://plotly.com/)
+* [pickle](https://docs.python.org/3/library/pickle.html)
