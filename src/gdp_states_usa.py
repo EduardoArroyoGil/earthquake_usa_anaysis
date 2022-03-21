@@ -1,8 +1,5 @@
 import pandas as pd
-import numpy as np
-from geopy import geocoders
-from geopy.geocoders import Nominatim
-import wbgapi as wb
+# import numpy as np
 from pandas_profiling import ProfileReport
 from fredapi import Fred
 import geopy
@@ -81,15 +78,6 @@ def get_coordinates(states_name_code):
 def generate_gdp_state():
     '''Function that generates gdp data and save it into a csv file'''
 
-    # import pandas as pd
-    # import numpy as np
-    # from geopy import geocoders
-    # from geopy.geocoders import Nominatim
-    # import wbgapi as wb
-    # from pandas_profiling import ProfileReport
-    # from fredapi import Fred
-    # import geopy
-    # from geopy.geocoders import Nominatim
     print('Start generate_gdp_state.py')
     total_start = time.process_time()
 
