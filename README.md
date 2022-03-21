@@ -28,7 +28,7 @@ The folder structure is based on four folders:
 ##   Conclusions:
 In general we see ...
 
-<img src="/images/usa_gdp-vs-mag.png" alt="drawing" width="500"/> <img src="/images/usa_growth_gdp-vs-mag.png" alt="drawing" width="500"/>
+<img src="/images/usa_gdp-vs-mag.png" alt="drawing" width="300"/> <img src="/images/usa_growth_gdp-vs-mag.png" alt="drawing" width="300"/>
 *Note: the seismic magnitude is ML which is explain in [here]((notebooks/Scanning%20Earthquake%20Dataset.ipynb))*
 
 For more datails you can find them [here](notebooks/Earthquake%20Analysis.ipynb)
