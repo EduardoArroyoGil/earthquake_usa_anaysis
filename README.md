@@ -32,7 +32,7 @@ We can see in general that when **a peak of ML happen is follow by a stalling or
 
 *Note: the seismic magnitude is ML which is explain in [here](notebooks/Scanning%20Earthquake%20Dataset.ipynb)*
 
-For more datails you can find them [here](notebooks/Earthquake%20Analysis.ipynb)
+For more datails in an analytical sense, you can find them [here](notebooks/Earthquake%20Analysis.ipynb)
 
 ## Libraries:
 * [sys](https://docs.python.org/3/library/sys.html)
