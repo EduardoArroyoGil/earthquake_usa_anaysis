@@ -1,0 +1,2743 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20221.22.0324.2209                               -->
+<workbook original-version='18.1' source-build='2022.1.0 (20221.22.0324.2209)' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AccessibleZoneTabOrder.true...AccessibleZoneTabOrder />
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <MapboxVectorStylesAndLayers />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelExtractV2.true...ObjectModelExtractV2 />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <WindowsPersistSimpleIdentifiers />
+    <WorksheetBackgroundTransparency />
+    <ZoneBackgroundTransparency />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column caption='year' datatype='integer' name='[Parameter 1]' param-domain-type='range' role='measure' type='quantitative' value='2004'>
+        <calculation class='tableau' formula='2004' />
+        <range max='2020' min='1980' />
+      </column>
+    </datasource>
+    <datasource caption='Data Model' inline='true' name='federated.1cykffj17nioaa17frqj70my1hit' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='f_gdp' name='textscan.1iwltxk0cffp021a37b2u038d9ko'>
+            <connection class='textscan' directory='/Users/eduardoarroyo/Documents/GitHub/earthquake_usa_anaysis/data/extraction_layer' filename='f_gdp.csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='f_earthquakes' name='textscan.1c7s3ee11ahaqf1gqys7c16d2msi'>
+            <connection class='textscan' directory='/Users/eduardoarroyo/Documents/GitHub/earthquake_usa_anaysis/data/extraction_layer' filename='f_earthquakes.csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='link_eq_gdp' name='textscan.0y7n9r80s7s0yx1evtw891uisnsu'>
+            <connection class='textscan' directory='/Users/eduardoarroyo/Documents/GitHub/earthquake_usa_anaysis/data/extraction_layer' filename='link_eq_gdp.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.1c7s3ee11ahaqf1gqys7c16d2msi' name='f_earthquakes.csv' table='[f_earthquakes#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='integer' name='F1' ordinal='0' />
+            <column datatype='string' name='id_earthquake' ordinal='1' />
+            <column datatype='string' name='key_earthquake_gdp' ordinal='2' />
+            <column datatype='datetime' name='time' ordinal='3' />
+            <column datatype='integer' name='year' ordinal='4' />
+            <column datatype='real' name='latitude' ordinal='5' />
+            <column datatype='real' name='longitude' ordinal='6' />
+            <column datatype='real' name='depth' ordinal='7' />
+            <column datatype='real' name='mag' ordinal='8' />
+            <column datatype='string' name='magType' ordinal='9' />
+            <column datatype='real' name='nst' ordinal='10' />
+            <column datatype='real' name='gap' ordinal='11' />
+            <column datatype='real' name='dmin' ordinal='12' />
+            <column datatype='real' name='rms' ordinal='13' />
+            <column datatype='string' name='net' ordinal='14' />
+            <column datatype='string' name='id' ordinal='15' />
+            <column datatype='string' name='place' ordinal='16' />
+            <column datatype='string' name='type' ordinal='17' />
+            <column datatype='real' name='horizontalError' ordinal='18' />
+            <column datatype='real' name='depthError' ordinal='19' />
+            <column datatype='real' name='magError' ordinal='20' />
+            <column datatype='real' name='magNst' ordinal='21' />
+            <column datatype='string' name='status' ordinal='22' />
+            <column datatype='string' name='locationSource' ordinal='23' />
+            <column datatype='string' name='magSource' ordinal='24' />
+            <column datatype='datetime' name='updated_date' ordinal='25' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation type='collection'>
+          <relation connection='textscan.1iwltxk0cffp021a37b2u038d9ko' name='f_gdp.csv' table='[f_gdp#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='integer' name='F1' ordinal='0' />
+              <column datatype='string' name='id_gdp' ordinal='1' />
+              <column datatype='string' name='key_gdp_earthquake' ordinal='2' />
+              <column datatype='integer' name='year' ordinal='3' />
+              <column datatype='real' name='gdp' ordinal='4' />
+              <column datatype='string' name='state_code' ordinal='5' />
+              <column datatype='string' name='state_name' ordinal='6' />
+              <column datatype='real' name='longitude' ordinal='7' />
+              <column datatype='real' name='latitude' ordinal='8' />
+            </columns>
+          </relation>
+          <relation connection='textscan.0y7n9r80s7s0yx1evtw891uisnsu' name='link_eq_gdp.csv' table='[link_eq_gdp#csv]' type='table'>
+            <columns character-set='UTF-8' header='no' locale='en_US' separator=','>
+              <column datatype='integer' name='F1' ordinal='0' />
+              <column datatype='string' name='F2' ordinal='1' />
+              <column datatype='string' name='F3' ordinal='2' />
+            </columns>
+          </relation>
+          <relation connection='textscan.1c7s3ee11ahaqf1gqys7c16d2msi' name='f_earthquakes.csv' table='[f_earthquakes#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='integer' name='F1' ordinal='0' />
+              <column datatype='string' name='id_earthquake' ordinal='1' />
+              <column datatype='string' name='key_earthquake_gdp' ordinal='2' />
+              <column datatype='datetime' name='time' ordinal='3' />
+              <column datatype='integer' name='year' ordinal='4' />
+              <column datatype='real' name='latitude' ordinal='5' />
+              <column datatype='real' name='longitude' ordinal='6' />
+              <column datatype='real' name='depth' ordinal='7' />
+              <column datatype='real' name='mag' ordinal='8' />
+              <column datatype='string' name='magType' ordinal='9' />
+              <column datatype='real' name='nst' ordinal='10' />
+              <column datatype='real' name='gap' ordinal='11' />
+              <column datatype='real' name='dmin' ordinal='12' />
+              <column datatype='real' name='rms' ordinal='13' />
+              <column datatype='string' name='net' ordinal='14' />
+              <column datatype='string' name='id' ordinal='15' />
+              <column datatype='string' name='place' ordinal='16' />
+              <column datatype='string' name='type' ordinal='17' />
+              <column datatype='real' name='horizontalError' ordinal='18' />
+              <column datatype='real' name='depthError' ordinal='19' />
+              <column datatype='real' name='magError' ordinal='20' />
+              <column datatype='real' name='magNst' ordinal='21' />
+              <column datatype='string' name='status' ordinal='22' />
+              <column datatype='string' name='locationSource' ordinal='23' />
+              <column datatype='string' name='magSource' ordinal='24' />
+              <column datatype='datetime' name='updated_date' ordinal='25' />
+            </columns>
+          </relation>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <cols>
+          <map key='[F1 (f_earthquakes.csv)]' value='[f_earthquakes.csv].[F1]' />
+          <map key='[F1 (link_eq_gdp.csv)]' value='[link_eq_gdp.csv].[F1]' />
+          <map key='[F1]' value='[f_gdp.csv].[F1]' />
+          <map key='[F2]' value='[link_eq_gdp.csv].[F2]' />
+          <map key='[F3]' value='[link_eq_gdp.csv].[F3]' />
+          <map key='[depthError]' value='[f_earthquakes.csv].[depthError]' />
+          <map key='[depth]' value='[f_earthquakes.csv].[depth]' />
+          <map key='[dmin]' value='[f_earthquakes.csv].[dmin]' />
+          <map key='[gap]' value='[f_earthquakes.csv].[gap]' />
+          <map key='[gdp]' value='[f_gdp.csv].[gdp]' />
+          <map key='[horizontalError]' value='[f_earthquakes.csv].[horizontalError]' />
+          <map key='[id]' value='[f_earthquakes.csv].[id]' />
+          <map key='[id_earthquake]' value='[f_earthquakes.csv].[id_earthquake]' />
+          <map key='[id_gdp]' value='[f_gdp.csv].[id_gdp]' />
+          <map key='[key_earthquake_gdp]' value='[f_earthquakes.csv].[key_earthquake_gdp]' />
+          <map key='[key_gdp_earthquake]' value='[f_gdp.csv].[key_gdp_earthquake]' />
+          <map key='[latitude (f_earthquakes.csv)]' value='[f_earthquakes.csv].[latitude]' />
+          <map key='[latitude]' value='[f_gdp.csv].[latitude]' />
+          <map key='[locationSource]' value='[f_earthquakes.csv].[locationSource]' />
+          <map key='[longitude (f_earthquakes.csv)]' value='[f_earthquakes.csv].[longitude]' />
+          <map key='[longitude]' value='[f_gdp.csv].[longitude]' />
+          <map key='[magError]' value='[f_earthquakes.csv].[magError]' />
+          <map key='[magNst]' value='[f_earthquakes.csv].[magNst]' />
+          <map key='[magSource]' value='[f_earthquakes.csv].[magSource]' />
+          <map key='[magType]' value='[f_earthquakes.csv].[magType]' />
+          <map key='[mag]' value='[f_earthquakes.csv].[mag]' />
+          <map key='[net]' value='[f_earthquakes.csv].[net]' />
+          <map key='[nst]' value='[f_earthquakes.csv].[nst]' />
+          <map key='[place]' value='[f_earthquakes.csv].[place]' />
+          <map key='[rms]' value='[f_earthquakes.csv].[rms]' />
+          <map key='[state_code]' value='[f_gdp.csv].[state_code]' />
+          <map key='[state_name]' value='[f_gdp.csv].[state_name]' />
+          <map key='[status]' value='[f_earthquakes.csv].[status]' />
+          <map key='[time]' value='[f_earthquakes.csv].[time]' />
+          <map key='[type]' value='[f_earthquakes.csv].[type]' />
+          <map key='[updated_date]' value='[f_earthquakes.csv].[updated_date]' />
+          <map key='[year (f_earthquakes.csv)]' value='[f_earthquakes.csv].[year]' />
+          <map key='[year]' value='[f_gdp.csv].[year]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[f_gdp.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[link_eq_gdp.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;false&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[f_earthquakes.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[F1]</local-name>
+            <parent-name>[f_gdp.csv]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_gdp.csv_8AC193454937428B8150A259A45C1662]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>id_gdp</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[id_gdp]</local-name>
+            <parent-name>[f_gdp.csv]</parent-name>
+            <remote-alias>id_gdp</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_gdp.csv_8AC193454937428B8150A259A45C1662]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>key_gdp_earthquake</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[key_gdp_earthquake]</local-name>
+            <parent-name>[f_gdp.csv]</parent-name>
+            <remote-alias>key_gdp_earthquake</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_gdp.csv_8AC193454937428B8150A259A45C1662]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[year]</local-name>
+            <parent-name>[f_gdp.csv]</parent-name>
+            <remote-alias>year</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_gdp.csv_8AC193454937428B8150A259A45C1662]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>gdp</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[gdp]</local-name>
+            <parent-name>[f_gdp.csv]</parent-name>
+            <remote-alias>gdp</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_gdp.csv_8AC193454937428B8150A259A45C1662]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>state_code</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[state_code]</local-name>
+            <parent-name>[f_gdp.csv]</parent-name>
+            <remote-alias>state_code</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_gdp.csv_8AC193454937428B8150A259A45C1662]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>state_name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[state_name]</local-name>
+            <parent-name>[f_gdp.csv]</parent-name>
+            <remote-alias>state_name</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_gdp.csv_8AC193454937428B8150A259A45C1662]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>longitude</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[longitude]</local-name>
+            <parent-name>[f_gdp.csv]</parent-name>
+            <remote-alias>longitude</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_gdp.csv_8AC193454937428B8150A259A45C1662]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>latitude</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[latitude]</local-name>
+            <parent-name>[f_gdp.csv]</parent-name>
+            <remote-alias>latitude</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_gdp.csv_8AC193454937428B8150A259A45C1662]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[F1 (link_eq_gdp.csv)]</local-name>
+            <parent-name>[link_eq_gdp.csv]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[link_eq_gdp.csv_7347F84FAD6A4C5BB3EFB6E86AF62CD0]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F2</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[F2]</local-name>
+            <parent-name>[link_eq_gdp.csv]</parent-name>
+            <remote-alias>F2</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[link_eq_gdp.csv_7347F84FAD6A4C5BB3EFB6E86AF62CD0]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F3</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[F3]</local-name>
+            <parent-name>[link_eq_gdp.csv]</parent-name>
+            <remote-alias>F3</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[link_eq_gdp.csv_7347F84FAD6A4C5BB3EFB6E86AF62CD0]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[F1 (f_earthquakes.csv)]</local-name>
+            <parent-name>[f_earthquakes.csv]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>id_earthquake</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[id_earthquake]</local-name>
+            <parent-name>[f_earthquakes.csv]</parent-name>
+            <remote-alias>id_earthquake</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>key_earthquake_gdp</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[key_earthquake_gdp]</local-name>
+            <parent-name>[f_earthquakes.csv]</parent-name>
+            <remote-alias>key_earthquake_gdp</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>time</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[time]</local-name>
+            <parent-name>[f_earthquakes.csv]</parent-name>
+            <remote-alias>time</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[year (f_earthquakes.csv)]</local-name>
+            <parent-name>[f_earthquakes.csv]</parent-name>
+            <remote-alias>year</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>latitude</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[latitude (f_earthquakes.csv)]</local-name>
+            <parent-name>[f_earthquakes.csv]</parent-name>
+            <remote-alias>latitude</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>longitude</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[longitude (f_earthquakes.csv)]</local-name>
+            <parent-name>[f_earthquakes.csv]</parent-name>
+            <remote-alias>longitude</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>depth</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[depth]</local-name>
+            <parent-name>[f_earthquakes.csv]</parent-name>
+            <remote-alias>depth</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>mag</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[mag]</local-name>
+            <parent-name>[f_earthquakes.csv]</parent-name>
+            <remote-alias>mag</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>magType</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[magType]</local-name>
+            <parent-name>[f_earthquakes.csv]</parent-name>
+            <remote-alias>magType</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>nst</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[nst]</local-name>
+            <parent-name>[f_earthquakes.csv]</parent-name>
+            <remote-alias>nst</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>gap</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[gap]</local-name>
+            <parent-name>[f_earthquakes.csv]</parent-name>
+            <remote-alias>gap</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>dmin</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[dmin]</local-name>
+            <parent-name>[f_earthquakes.csv]</parent-name>
+            <remote-alias>dmin</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>rms</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[rms]</local-name>
+            <parent-name>[f_earthquakes.csv]</parent-name>
+            <remote-alias>rms</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>net</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[net]</local-name>
+            <parent-name>[f_earthquakes.csv]</parent-name>
+            <remote-alias>net</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[id]</local-name>
+            <parent-name>[f_earthquakes.csv]</parent-name>
+            <remote-alias>id</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>place</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[place]</local-name>
+            <parent-name>[f_earthquakes.csv]</parent-name>
+            <remote-alias>place</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[type]</local-name>
+            <parent-name>[f_earthquakes.csv]</parent-name>
+            <remote-alias>type</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>horizontalError</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[horizontalError]</local-name>
+            <parent-name>[f_earthquakes.csv]</parent-name>
+            <remote-alias>horizontalError</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>depthError</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[depthError]</local-name>
+            <parent-name>[f_earthquakes.csv]</parent-name>
+            <remote-alias>depthError</remote-alias>
+            <ordinal>31</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>magError</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[magError]</local-name>
+            <parent-name>[f_earthquakes.csv]</parent-name>
+            <remote-alias>magError</remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>magNst</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[magNst]</local-name>
+            <parent-name>[f_earthquakes.csv]</parent-name>
+            <remote-alias>magNst</remote-alias>
+            <ordinal>33</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>status</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[status]</local-name>
+            <parent-name>[f_earthquakes.csv]</parent-name>
+            <remote-alias>status</remote-alias>
+            <ordinal>34</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>locationSource</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[locationSource]</local-name>
+            <parent-name>[f_earthquakes.csv]</parent-name>
+            <remote-alias>locationSource</remote-alias>
+            <ordinal>35</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>magSource</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[magSource]</local-name>
+            <parent-name>[f_earthquakes.csv]</parent-name>
+            <remote-alias>magSource</remote-alias>
+            <ordinal>36</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>updated_date</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[updated_date]</local-name>
+            <parent-name>[f_earthquakes.csv]</parent-name>
+            <remote-alias>updated_date</remote-alias>
+            <ordinal>37</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Magnitude' datatype='string' name='[Calculation_32651119959842818]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='UPPER([magType])' />
+      </column>
+      <column caption='date_to_calc' datatype='string' name='[Calculation_32651119960088579]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='if YEAR([time])&gt;[Parameters].[Parameter 1] &#10;then &apos;after&apos;&#10;ELSE &apos;before&apos;&#10;END' />
+      </column>
+      <column caption='F1 (f earthquakes.csv)' datatype='integer' name='[F1 (f_earthquakes.csv)]' role='measure' type='quantitative' />
+      <column caption='F1 (link eq gdp.csv)' datatype='integer' name='[F1 (link_eq_gdp.csv)]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='consolidated_data.csv' datatype='table' name='[__tableau_internal_object_id__].[consolidated_data.csv_59504500E64A4A0FAD1E542C97A31202]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='f_earthquakes.csv' datatype='table' name='[__tableau_internal_object_id__].[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='f_gdp.csv' datatype='table' name='[__tableau_internal_object_id__].[f_gdp.csv_8AC193454937428B8150A259A45C1662]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='link_eq_gdp.csv' datatype='table' name='[__tableau_internal_object_id__].[link_eq_gdp.csv_7347F84FAD6A4C5BB3EFB6E86AF62CD0]' role='measure' type='quantitative' />
+      <column caption='Depth Error' datatype='real' name='[depthError]' role='measure' type='quantitative' />
+      <column caption='Depth' datatype='real' name='[depth]' role='measure' type='quantitative' />
+      <column caption='Dmin' datatype='real' name='[dmin]' role='measure' type='quantitative' />
+      <column caption='Gap' datatype='real' name='[gap]' role='measure' type='quantitative' />
+      <column caption='Gdp' datatype='real' name='[gdp]' role='measure' type='quantitative' />
+      <column caption='Horizontal Error' datatype='real' name='[horizontalError]' role='measure' type='quantitative' />
+      <column caption='Id' datatype='string' name='[id]' role='dimension' type='nominal' />
+      <column caption='Id Earthquake' datatype='string' name='[id_earthquake]' role='dimension' type='nominal' />
+      <column caption='Id Gdp' datatype='string' name='[id_gdp]' role='dimension' type='nominal' />
+      <column caption='Key Earthquake Gdp' datatype='string' name='[key_earthquake_gdp]' role='dimension' type='nominal' />
+      <column caption='Key Gdp Earthquake' datatype='string' name='[key_gdp_earthquake]' role='dimension' type='nominal' />
+      <column aggregation='Avg' caption='Latitude (F Earthquakes.Csv)' datatype='real' name='[latitude (f_earthquakes.csv)]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+      <column aggregation='Avg' caption='Latitude' datatype='real' name='[latitude]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+      <column caption='Location Source' datatype='string' name='[locationSource]' role='dimension' type='nominal' />
+      <column aggregation='Avg' caption='Longitude (F Earthquakes.Csv)' datatype='real' name='[longitude (f_earthquakes.csv)]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+      <column aggregation='Avg' caption='Longitude' datatype='real' name='[longitude]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+      <column caption='Mag Error' datatype='real' name='[magError]' role='measure' type='quantitative' />
+      <column caption='Mag Nst' datatype='real' name='[magNst]' role='measure' type='quantitative' />
+      <column caption='Mag Source' datatype='string' name='[magSource]' role='dimension' type='nominal' />
+      <column caption='Mag Type' datatype='string' name='[magType]' role='dimension' type='nominal' />
+      <column caption='Mag' datatype='real' name='[mag]' role='measure' type='quantitative' />
+      <column caption='Net' datatype='string' name='[net]' role='dimension' type='nominal' />
+      <column caption='Nst' datatype='real' name='[nst]' role='measure' type='quantitative' />
+      <column caption='Place' datatype='string' name='[place]' role='dimension' type='nominal' />
+      <column caption='Rms' datatype='real' name='[rms]' role='measure' type='quantitative' />
+      <column caption='State Code' datatype='string' name='[state_code]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column caption='State Name' datatype='string' name='[state_name]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column caption='Status' datatype='string' name='[status]' role='dimension' type='nominal' />
+      <column caption='Time' datatype='datetime' name='[time]' role='dimension' type='ordinal' />
+      <column caption='Type' datatype='string' name='[type]' role='dimension' type='nominal' />
+      <column caption='Updated Date' datatype='datetime' name='[updated_date]' role='dimension' type='ordinal' />
+      <column caption='Year (F Earthquakes.Csv)' datatype='integer' name='[year (f_earthquakes.csv)]' role='dimension' type='quantitative' />
+      <column caption='Year' datatype='integer' name='[year]' role='dimension' type='quantitative' />
+      <column-instance column='[latitude]' derivation='None' name='[none:latitude:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[longitude]' derivation='None' name='[none:longitude:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[type]' derivation='None' name='[none:type:nk]' pivot='key' type='nominal' />
+      <group caption='Action (Latitude)' hidden='true' name='[Action (Latitude)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[none:latitude:ok]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (Latitude,Longitude)' hidden='true' name='[Action (Latitude,Longitude)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[none:latitude:ok]' />
+          <groupfilter function='level-members' level='[none:longitude:ok]' />
+        </groupfilter>
+      </group>
+      <extract _.fcp.ObjectModelExtractV2.true...object-id='' count='-1' enabled='true' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='Data/earthquake_dashboard.twb Files/Data Model.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='04/12/2022 05:26:17 AM' username='tableau_internal_user'>
+          <_.fcp.ObjectModelEncapsulateLegacy.false...relation name='f_earthquakes.csv_B534703F92744820B1028921C9DEA141' table='[Extract].[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]' type='table' />
+          <_.fcp.ObjectModelEncapsulateLegacy.true...relation type='collection'>
+            <relation name='f_gdp.csv_8AC193454937428B8150A259A45C1662' table='[Extract].[f_gdp.csv_8AC193454937428B8150A259A45C1662]' type='table' />
+            <relation name='link_eq_gdp.csv_7347F84FAD6A4C5BB3EFB6E86AF62CD0' table='[Extract].[link_eq_gdp.csv_7347F84FAD6A4C5BB3EFB6E86AF62CD0]' type='table' />
+            <relation name='f_earthquakes.csv_B534703F92744820B1028921C9DEA141' table='[Extract].[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]' type='table' />
+          </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+          <cols>
+            <map key='[F1 (f_earthquakes.csv)]' value='[f_earthquakes.csv_B534703F92744820B1028921C9DEA141].[F1]' />
+            <map key='[F1 (link_eq_gdp.csv)]' value='[link_eq_gdp.csv_7347F84FAD6A4C5BB3EFB6E86AF62CD0].[F1]' />
+            <map key='[F1]' value='[f_gdp.csv_8AC193454937428B8150A259A45C1662].[F1]' />
+            <map key='[F2]' value='[link_eq_gdp.csv_7347F84FAD6A4C5BB3EFB6E86AF62CD0].[F2]' />
+            <map key='[F3]' value='[link_eq_gdp.csv_7347F84FAD6A4C5BB3EFB6E86AF62CD0].[F3]' />
+            <map key='[depthError]' value='[f_earthquakes.csv_B534703F92744820B1028921C9DEA141].[depthError]' />
+            <map key='[depth]' value='[f_earthquakes.csv_B534703F92744820B1028921C9DEA141].[depth]' />
+            <map key='[dmin]' value='[f_earthquakes.csv_B534703F92744820B1028921C9DEA141].[dmin]' />
+            <map key='[gap]' value='[f_earthquakes.csv_B534703F92744820B1028921C9DEA141].[gap]' />
+            <map key='[gdp]' value='[f_gdp.csv_8AC193454937428B8150A259A45C1662].[gdp]' />
+            <map key='[horizontalError]' value='[f_earthquakes.csv_B534703F92744820B1028921C9DEA141].[horizontalError]' />
+            <map key='[id]' value='[f_earthquakes.csv_B534703F92744820B1028921C9DEA141].[id]' />
+            <map key='[id_earthquake]' value='[f_earthquakes.csv_B534703F92744820B1028921C9DEA141].[id_earthquake]' />
+            <map key='[id_gdp]' value='[f_gdp.csv_8AC193454937428B8150A259A45C1662].[id_gdp]' />
+            <map key='[key_earthquake_gdp]' value='[f_earthquakes.csv_B534703F92744820B1028921C9DEA141].[key_earthquake_gdp]' />
+            <map key='[key_gdp_earthquake]' value='[f_gdp.csv_8AC193454937428B8150A259A45C1662].[key_gdp_earthquake]' />
+            <map key='[latitude (f_earthquakes.csv)]' value='[f_earthquakes.csv_B534703F92744820B1028921C9DEA141].[latitude]' />
+            <map key='[latitude]' value='[f_gdp.csv_8AC193454937428B8150A259A45C1662].[latitude]' />
+            <map key='[locationSource]' value='[f_earthquakes.csv_B534703F92744820B1028921C9DEA141].[locationSource]' />
+            <map key='[longitude (f_earthquakes.csv)]' value='[f_earthquakes.csv_B534703F92744820B1028921C9DEA141].[longitude]' />
+            <map key='[longitude]' value='[f_gdp.csv_8AC193454937428B8150A259A45C1662].[longitude]' />
+            <map key='[magError]' value='[f_earthquakes.csv_B534703F92744820B1028921C9DEA141].[magError]' />
+            <map key='[magNst]' value='[f_earthquakes.csv_B534703F92744820B1028921C9DEA141].[magNst]' />
+            <map key='[magSource]' value='[f_earthquakes.csv_B534703F92744820B1028921C9DEA141].[magSource]' />
+            <map key='[magType]' value='[f_earthquakes.csv_B534703F92744820B1028921C9DEA141].[magType]' />
+            <map key='[mag]' value='[f_earthquakes.csv_B534703F92744820B1028921C9DEA141].[mag]' />
+            <map key='[net]' value='[f_earthquakes.csv_B534703F92744820B1028921C9DEA141].[net]' />
+            <map key='[nst]' value='[f_earthquakes.csv_B534703F92744820B1028921C9DEA141].[nst]' />
+            <map key='[place]' value='[f_earthquakes.csv_B534703F92744820B1028921C9DEA141].[place]' />
+            <map key='[rms]' value='[f_earthquakes.csv_B534703F92744820B1028921C9DEA141].[rms]' />
+            <map key='[state_code]' value='[f_gdp.csv_8AC193454937428B8150A259A45C1662].[state_code]' />
+            <map key='[state_name]' value='[f_gdp.csv_8AC193454937428B8150A259A45C1662].[state_name]' />
+            <map key='[status]' value='[f_earthquakes.csv_B534703F92744820B1028921C9DEA141].[status]' />
+            <map key='[time]' value='[f_earthquakes.csv_B534703F92744820B1028921C9DEA141].[time]' />
+            <map key='[type]' value='[f_earthquakes.csv_B534703F92744820B1028921C9DEA141].[type]' />
+            <map key='[updated_date]' value='[f_earthquakes.csv_B534703F92744820B1028921C9DEA141].[updated_date]' />
+            <map key='[year (f_earthquakes.csv)]' value='[f_earthquakes.csv_B534703F92744820B1028921C9DEA141].[year]' />
+            <map key='[year]' value='[f_gdp.csv_8AC193454937428B8150A259A45C1662].[year]' />
+          </cols>
+          <refresh>
+            <refresh-event add-from-file-path='Data Model' increment-value='%null%' refresh-type='create' rows-inserted='6874637' timestamp-start='2022-04-12 05:25:15.917' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>F1</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[F1]</local-name>
+              <parent-name>[f_gdp.csv_8AC193454937428B8150A259A45C1662]</parent-name>
+              <remote-alias>F1</remote-alias>
+              <ordinal>0</ordinal>
+              <family>f_gdp.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1250</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_gdp.csv_8AC193454937428B8150A259A45C1662]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>id_gdp</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[id_gdp]</local-name>
+              <parent-name>[f_gdp.csv_8AC193454937428B8150A259A45C1662]</parent-name>
+              <remote-alias>id_gdp</remote-alias>
+              <ordinal>1</ordinal>
+              <family>f_gdp.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1250</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_gdp.csv_8AC193454937428B8150A259A45C1662]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>key_gdp_earthquake</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[key_gdp_earthquake]</local-name>
+              <parent-name>[f_gdp.csv_8AC193454937428B8150A259A45C1662]</parent-name>
+              <remote-alias>key_gdp_earthquake</remote-alias>
+              <ordinal>2</ordinal>
+              <family>f_gdp.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1250</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_gdp.csv_8AC193454937428B8150A259A45C1662]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>year</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[year]</local-name>
+              <parent-name>[f_gdp.csv_8AC193454937428B8150A259A45C1662]</parent-name>
+              <remote-alias>year</remote-alias>
+              <ordinal>3</ordinal>
+              <family>f_gdp.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>25</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_gdp.csv_8AC193454937428B8150A259A45C1662]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>gdp</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[gdp]</local-name>
+              <parent-name>[f_gdp.csv_8AC193454937428B8150A259A45C1662]</parent-name>
+              <remote-alias>gdp</remote-alias>
+              <ordinal>4</ordinal>
+              <family>f_gdp.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1250</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_gdp.csv_8AC193454937428B8150A259A45C1662]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>state_code</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[state_code]</local-name>
+              <parent-name>[f_gdp.csv_8AC193454937428B8150A259A45C1662]</parent-name>
+              <remote-alias>state_code</remote-alias>
+              <ordinal>5</ordinal>
+              <family>f_gdp.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>50</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_gdp.csv_8AC193454937428B8150A259A45C1662]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>state_name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[state_name]</local-name>
+              <parent-name>[f_gdp.csv_8AC193454937428B8150A259A45C1662]</parent-name>
+              <remote-alias>state_name</remote-alias>
+              <ordinal>6</ordinal>
+              <family>f_gdp.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>50</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_gdp.csv_8AC193454937428B8150A259A45C1662]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>longitude</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[longitude]</local-name>
+              <parent-name>[f_gdp.csv_8AC193454937428B8150A259A45C1662]</parent-name>
+              <remote-alias>longitude</remote-alias>
+              <ordinal>7</ordinal>
+              <family>f_gdp.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>50</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_gdp.csv_8AC193454937428B8150A259A45C1662]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>latitude</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[latitude]</local-name>
+              <parent-name>[f_gdp.csv_8AC193454937428B8150A259A45C1662]</parent-name>
+              <remote-alias>latitude</remote-alias>
+              <ordinal>8</ordinal>
+              <family>f_gdp.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>50</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_gdp.csv_8AC193454937428B8150A259A45C1662]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>F1</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[F1 (link_eq_gdp.csv)]</local-name>
+              <parent-name>[link_eq_gdp.csv_7347F84FAD6A4C5BB3EFB6E86AF62CD0]</parent-name>
+              <remote-alias>F1</remote-alias>
+              <ordinal>9</ordinal>
+              <family>link_eq_gdp.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3600613</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[link_eq_gdp.csv_7347F84FAD6A4C5BB3EFB6E86AF62CD0]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>F2</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[F2]</local-name>
+              <parent-name>[link_eq_gdp.csv_7347F84FAD6A4C5BB3EFB6E86AF62CD0]</parent-name>
+              <remote-alias>F2</remote-alias>
+              <ordinal>10</ordinal>
+              <family>link_eq_gdp.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2803041</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[link_eq_gdp.csv_7347F84FAD6A4C5BB3EFB6E86AF62CD0]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>F3</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[F3]</local-name>
+              <parent-name>[link_eq_gdp.csv_7347F84FAD6A4C5BB3EFB6E86AF62CD0]</parent-name>
+              <remote-alias>F3</remote-alias>
+              <ordinal>11</ordinal>
+              <family>link_eq_gdp.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1838</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[link_eq_gdp.csv_7347F84FAD6A4C5BB3EFB6E86AF62CD0]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>F1</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[F1 (f_earthquakes.csv)]</local-name>
+              <parent-name>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</parent-name>
+              <remote-alias>F1</remote-alias>
+              <ordinal>12</ordinal>
+              <family>f_earthquakes.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3272774</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>id_earthquake</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[id_earthquake]</local-name>
+              <parent-name>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</parent-name>
+              <remote-alias>id_earthquake</remote-alias>
+              <ordinal>13</ordinal>
+              <family>f_earthquakes.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3261999</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>key_earthquake_gdp</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[key_earthquake_gdp]</local-name>
+              <parent-name>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</parent-name>
+              <remote-alias>key_earthquake_gdp</remote-alias>
+              <ordinal>14</ordinal>
+              <family>f_earthquakes.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3131853</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>time</remote-name>
+              <remote-type>135</remote-type>
+              <local-name>[time]</local-name>
+              <parent-name>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</parent-name>
+              <remote-alias>time</remote-alias>
+              <ordinal>15</ordinal>
+              <family>f_earthquakes.csv</family>
+              <local-type>datetime</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>3261999</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>year</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[year (f_earthquakes.csv)]</local-name>
+              <parent-name>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</parent-name>
+              <remote-alias>year</remote-alias>
+              <ordinal>16</ordinal>
+              <family>f_earthquakes.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>50</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>latitude</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[latitude (f_earthquakes.csv)]</local-name>
+              <parent-name>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</parent-name>
+              <remote-alias>latitude</remote-alias>
+              <ordinal>17</ordinal>
+              <family>f_earthquakes.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>380719</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>longitude</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[longitude (f_earthquakes.csv)]</local-name>
+              <parent-name>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</parent-name>
+              <remote-alias>longitude</remote-alias>
+              <ordinal>18</ordinal>
+              <family>f_earthquakes.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>437680</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>depth</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[depth]</local-name>
+              <parent-name>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</parent-name>
+              <remote-alias>depth</remote-alias>
+              <ordinal>19</ordinal>
+              <family>f_earthquakes.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>89664</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>mag</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[mag]</local-name>
+              <parent-name>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</parent-name>
+              <remote-alias>mag</remote-alias>
+              <ordinal>20</ordinal>
+              <family>f_earthquakes.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1065</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>magType</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[magType]</local-name>
+              <parent-name>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</parent-name>
+              <remote-alias>magType</remote-alias>
+              <ordinal>21</ordinal>
+              <family>f_earthquakes.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>20</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>nst</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[nst]</local-name>
+              <parent-name>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</parent-name>
+              <remote-alias>nst</remote-alias>
+              <ordinal>22</ordinal>
+              <family>f_earthquakes.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>897</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>gap</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[gap]</local-name>
+              <parent-name>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</parent-name>
+              <remote-alias>gap</remote-alias>
+              <ordinal>23</ordinal>
+              <family>f_earthquakes.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>24952</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>dmin</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[dmin]</local-name>
+              <parent-name>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</parent-name>
+              <remote-alias>dmin</remote-alias>
+              <ordinal>24</ordinal>
+              <family>f_earthquakes.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>83344</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>rms</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[rms]</local-name>
+              <parent-name>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</parent-name>
+              <remote-alias>rms</remote-alias>
+              <ordinal>25</ordinal>
+              <family>f_earthquakes.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>8335</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>net</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[net]</local-name>
+              <parent-name>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</parent-name>
+              <remote-alias>net</remote-alias>
+              <ordinal>26</ordinal>
+              <family>f_earthquakes.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>16</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>id</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[id]</local-name>
+              <parent-name>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</parent-name>
+              <remote-alias>id</remote-alias>
+              <ordinal>27</ordinal>
+              <family>f_earthquakes.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3261999</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>place</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[place]</local-name>
+              <parent-name>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</parent-name>
+              <remote-alias>place</remote-alias>
+              <ordinal>28</ordinal>
+              <family>f_earthquakes.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>105169</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>type</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[type]</local-name>
+              <parent-name>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</parent-name>
+              <remote-alias>type</remote-alias>
+              <ordinal>29</ordinal>
+              <family>f_earthquakes.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>9</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>horizontalError</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[horizontalError]</local-name>
+              <parent-name>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</parent-name>
+              <remote-alias>horizontalError</remote-alias>
+              <ordinal>30</ordinal>
+              <family>f_earthquakes.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>6208</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>depthError</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[depthError]</local-name>
+              <parent-name>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</parent-name>
+              <remote-alias>depthError</remote-alias>
+              <ordinal>31</ordinal>
+              <family>f_earthquakes.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>19296</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>magError</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[magError]</local-name>
+              <parent-name>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</parent-name>
+              <remote-alias>magError</remote-alias>
+              <ordinal>32</ordinal>
+              <family>f_earthquakes.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1608</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>magNst</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[magNst]</local-name>
+              <parent-name>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</parent-name>
+              <remote-alias>magNst</remote-alias>
+              <ordinal>33</ordinal>
+              <family>f_earthquakes.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>476</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>status</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[status]</local-name>
+              <parent-name>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</parent-name>
+              <remote-alias>status</remote-alias>
+              <ordinal>34</ordinal>
+              <family>f_earthquakes.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>locationSource</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[locationSource]</local-name>
+              <parent-name>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</parent-name>
+              <remote-alias>locationSource</remote-alias>
+              <ordinal>35</ordinal>
+              <family>f_earthquakes.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>108</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>magSource</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[magSource]</local-name>
+              <parent-name>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</parent-name>
+              <remote-alias>magSource</remote-alias>
+              <ordinal>36</ordinal>
+              <family>f_earthquakes.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>196</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>updated_date</remote-name>
+              <remote-type>135</remote-type>
+              <local-name>[updated_date]</local-name>
+              <parent-name>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</parent-name>
+              <remote-alias>updated_date</remote-alias>
+              <ordinal>37</ordinal>
+              <family>f_earthquakes.csv</family>
+              <local-type>datetime</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>2743733</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='shape' field='[none:type:nk]' type='shape'>
+            <map to='asterisk'>
+              <bucket>&quot;mining explosion&quot;</bucket>
+            </map>
+            <map to='asterisk'>
+              <bucket>&quot;not reported&quot;</bucket>
+            </map>
+            <map to='asterisk'>
+              <bucket>&quot;volcanic eruption&quot;</bucket>
+            </map>
+            <map to='circle'>
+              <bucket>&quot;earthquake&quot;</bucket>
+            </map>
+            <map to='circle'>
+              <bucket>&quot;landslide&quot;</bucket>
+            </map>
+            <map to='circle'>
+              <bucket>&quot;Rock Slide&quot;</bucket>
+            </map>
+            <map to='diamond'>
+              <bucket>&quot;chemical explosion&quot;</bucket>
+            </map>
+            <map to='diamond'>
+              <bucket>&quot;nuclear explosion&quot;</bucket>
+            </map>
+            <map to='down-triangle'>
+              <bucket>&quot;eq&quot;</bucket>
+            </map>
+            <map to='down-triangle'>
+              <bucket>&quot;quarry&quot;</bucket>
+            </map>
+            <map to='left-triangle'>
+              <bucket>&quot;experimental explosion&quot;</bucket>
+            </map>
+            <map to='left-triangle'>
+              <bucket>&quot;quarry blast&quot;</bucket>
+            </map>
+            <map to='plus'>
+              <bucket>&quot;acoustic noise&quot;</bucket>
+            </map>
+            <map to='plus'>
+              <bucket>&quot;mine collapse&quot;</bucket>
+            </map>
+            <map to='plus'>
+              <bucket>&quot;sonic boom&quot;</bucket>
+            </map>
+            <map to='right-triangle'>
+              <bucket>&quot;explosion&quot;</bucket>
+            </map>
+            <map to='right-triangle'>
+              <bucket>&quot;induced or triggered event&quot;</bucket>
+            </map>
+            <map to='square'>
+              <bucket>&quot;ice quake&quot;</bucket>
+            </map>
+            <map to='square'>
+              <bucket>&quot;meteorite&quot;</bucket>
+            </map>
+            <map to='square'>
+              <bucket>&quot;rockslide&quot;</bucket>
+            </map>
+            <map to='times'>
+              <bucket>&quot;building collapse&quot;</bucket>
+            </map>
+            <map to='times'>
+              <bucket>&quot;rock burst&quot;</bucket>
+            </map>
+            <map to='times'>
+              <bucket>&quot;sonicboom&quot;</bucket>
+            </map>
+            <map to='triangle'>
+              <bucket>&quot;collapse&quot;</bucket>
+            </map>
+            <map to='triangle'>
+              <bucket>&quot;other event&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='year' datatype='integer' name='[Parameter 1]' param-domain-type='range' role='measure' type='quantitative' value='2004'>
+          <calculation class='tableau' formula='2004' />
+          <range max='2020' min='1980' />
+        </column>
+      </datasource-dependencies>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='f_earthquakes.csv' id='f_earthquakes.csv_B534703F92744820B1028921C9DEA141'>
+            <properties context=''>
+              <relation connection='textscan.1c7s3ee11ahaqf1gqys7c16d2msi' name='f_earthquakes.csv' table='[f_earthquakes#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='integer' name='F1' ordinal='0' />
+                  <column datatype='string' name='id_earthquake' ordinal='1' />
+                  <column datatype='string' name='key_earthquake_gdp' ordinal='2' />
+                  <column datatype='datetime' name='time' ordinal='3' />
+                  <column datatype='integer' name='year' ordinal='4' />
+                  <column datatype='real' name='latitude' ordinal='5' />
+                  <column datatype='real' name='longitude' ordinal='6' />
+                  <column datatype='real' name='depth' ordinal='7' />
+                  <column datatype='real' name='mag' ordinal='8' />
+                  <column datatype='string' name='magType' ordinal='9' />
+                  <column datatype='real' name='nst' ordinal='10' />
+                  <column datatype='real' name='gap' ordinal='11' />
+                  <column datatype='real' name='dmin' ordinal='12' />
+                  <column datatype='real' name='rms' ordinal='13' />
+                  <column datatype='string' name='net' ordinal='14' />
+                  <column datatype='string' name='id' ordinal='15' />
+                  <column datatype='string' name='place' ordinal='16' />
+                  <column datatype='string' name='type' ordinal='17' />
+                  <column datatype='real' name='horizontalError' ordinal='18' />
+                  <column datatype='real' name='depthError' ordinal='19' />
+                  <column datatype='real' name='magError' ordinal='20' />
+                  <column datatype='real' name='magNst' ordinal='21' />
+                  <column datatype='string' name='status' ordinal='22' />
+                  <column datatype='string' name='locationSource' ordinal='23' />
+                  <column datatype='string' name='magSource' ordinal='24' />
+                  <column datatype='datetime' name='updated_date' ordinal='25' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='f_earthquakes.csv_B534703F92744820B1028921C9DEA141' table='[Extract].[f_earthquakes.csv_B534703F92744820B1028921C9DEA141]' type='table' />
+            </properties>
+          </object>
+          <object caption='f_gdp.csv' id='f_gdp.csv_8AC193454937428B8150A259A45C1662'>
+            <properties context=''>
+              <relation connection='textscan.1iwltxk0cffp021a37b2u038d9ko' name='f_gdp.csv' table='[f_gdp#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='integer' name='F1' ordinal='0' />
+                  <column datatype='string' name='id_gdp' ordinal='1' />
+                  <column datatype='string' name='key_gdp_earthquake' ordinal='2' />
+                  <column datatype='integer' name='year' ordinal='3' />
+                  <column datatype='real' name='gdp' ordinal='4' />
+                  <column datatype='string' name='state_code' ordinal='5' />
+                  <column datatype='string' name='state_name' ordinal='6' />
+                  <column datatype='real' name='longitude' ordinal='7' />
+                  <column datatype='real' name='latitude' ordinal='8' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='f_gdp.csv_8AC193454937428B8150A259A45C1662' table='[Extract].[f_gdp.csv_8AC193454937428B8150A259A45C1662]' type='table' />
+            </properties>
+          </object>
+          <object caption='link_eq_gdp.csv' id='link_eq_gdp.csv_7347F84FAD6A4C5BB3EFB6E86AF62CD0'>
+            <properties context=''>
+              <relation connection='textscan.0y7n9r80s7s0yx1evtw891uisnsu' name='link_eq_gdp.csv' table='[link_eq_gdp#csv]' type='table'>
+                <columns character-set='UTF-8' header='no' locale='en_US' separator=','>
+                  <column datatype='integer' name='F1' ordinal='0' />
+                  <column datatype='string' name='F2' ordinal='1' />
+                  <column datatype='string' name='F3' ordinal='2' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='link_eq_gdp.csv_7347F84FAD6A4C5BB3EFB6E86AF62CD0' table='[Extract].[link_eq_gdp.csv_7347F84FAD6A4C5BB3EFB6E86AF62CD0]' type='table' />
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[F2]' />
+              <expression op='[key_earthquake_gdp]' />
+            </expression>
+            <first-end-point object-id='link_eq_gdp.csv_7347F84FAD6A4C5BB3EFB6E86AF62CD0' />
+            <second-end-point object-id='f_earthquakes.csv_B534703F92744820B1028921C9DEA141' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[key_gdp_earthquake]' />
+              <expression op='[F3]' />
+            </expression>
+            <first-end-point object-id='f_gdp.csv_8AC193454937428B8150A259A45C1662' />
+            <second-end-point object-id='link_eq_gdp.csv_7347F84FAD6A4C5BB3EFB6E86AF62CD0' />
+          </relationship>
+        </relationships>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <actions>
+    <action caption='Filter 1 (generated)' name='[Action1_AE2C635F28D847EA81157E02A2737C9A]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Dashboard 1' type='sheet' worksheet='map' />
+      <link caption='Filter 1 (generated)' delimiter=',' escape='\' expression='tsl:Dashboard%201?%5Bfederated.1cykffj17nioaa17frqj70my1hit%5D.%5Blatitude%5D~s0=&lt;[federated.0nf4k8913khulg167898a1pnt962].[latitude]~na&gt;&amp;%5Bfederated.1cykffj17nioaa17frqj70my1hit%5D.%5Blatitude%5D~s0=&lt;[federated.0nf4k8913khulg167898a1pnt962].[latitude]~na&gt;' include-null='true' multi-select='true' url-escape='true' />
+      <command command='tsc:tsl-filter'>
+        <param name='target' value='Dashboard 1' />
+      </command>
+    </action>
+    <datasources>
+      <datasource caption='Data Model' name='federated.1cykffj17nioaa17frqj70my1hit' />
+    </datasources>
+    <datasource-dependencies datasource='federated.1cykffj17nioaa17frqj70my1hit'>
+      <column aggregation='Avg' caption='Latitude' datatype='real' name='[latitude]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+    </datasource-dependencies>
+  </actions>
+  <worksheets>
+    <worksheet name='Sheet 4'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Data Model' name='federated.1cykffj17nioaa17frqj70my1hit' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1cykffj17nioaa17frqj70my1hit'>
+            <column caption='Magnitude' datatype='string' name='[Calculation_32651119959842818]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='UPPER([magType])' />
+            </column>
+            <_.fcp.ObjectModelTableType.false...column caption='consolidated_data.csv' datatype='integer' name='[__tableau_internal_object_id__].[consolidated_data.csv_59504500E64A4A0FAD1E542C97A31202]' role='measure' type='quantitative' />
+            <column-instance column='[__tableau_internal_object_id__].[consolidated_data.csv_59504500E64A4A0FAD1E542C97A31202]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:consolidated_data.csv_59504500E64A4A0FAD1E542C97A31202:qk]' pivot='key' type='quantitative' />
+            <_.fcp.ObjectModelTableType.true...column caption='consolidated_data.csv' datatype='table' name='[__tableau_internal_object_id__].[consolidated_data.csv_59504500E64A4A0FAD1E542C97A31202]' role='measure' type='quantitative' />
+            <column caption='Mag Type' datatype='string' name='[magType]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_32651119959842818]' derivation='None' name='[none:Calculation_32651119959842818:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <computed-sort column='[federated.1cykffj17nioaa17frqj70my1hit].[none:Calculation_32651119959842818:nk]' direction='ASC' using='[federated.1cykffj17nioaa17frqj70my1hit].[__tableau_internal_object_id__].[cnt:consolidated_data.csv_59504500E64A4A0FAD1E542C97A31202:qk]' />
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.1cykffj17nioaa17frqj70my1hit].[__tableau_internal_object_id__].[cnt:consolidated_data.csv_59504500E64A4A0FAD1E542C97A31202:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1cykffj17nioaa17frqj70my1hit].[none:Calculation_32651119959842818:nk]</rows>
+        <cols />
+      </table>
+      <simple-id uuid='{86B72859-3BE0-4E31-9B0D-3A4A5488FF03}' />
+    </worksheet>
+    <worksheet name='Sheet 6'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Data Model' name='federated.1cykffj17nioaa17frqj70my1hit' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1cykffj17nioaa17frqj70my1hit'>
+            <column-instance column='[type]' derivation='None' name='[none:type:nk]' pivot='key' type='nominal' />
+            <column caption='Type' datatype='string' name='[type]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Shape' />
+            <encodings>
+              <shape column='[federated.1cykffj17nioaa17frqj70my1hit].[none:type:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{8DE7728C-A16F-4F94-8757-7EAEB58CF576}' />
+    </worksheet>
+    <worksheet name='Sheet 7'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Data Model' name='federated.1cykffj17nioaa17frqj70my1hit' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='year' datatype='integer' name='[Parameter 1]' param-domain-type='range' role='measure' type='quantitative' value='2004'>
+              <calculation class='tableau' formula='2004' />
+              <range max='2020' min='1980' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.1cykffj17nioaa17frqj70my1hit'>
+            <column caption='Magnitude' datatype='string' name='[Calculation_32651119959842818]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='UPPER([magType])' />
+            </column>
+            <column caption='date_to_calc' datatype='string' name='[Calculation_32651119960088579]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='if YEAR([time])&gt;[Parameters].[Parameter 1] &#10;then &apos;after&apos;&#10;ELSE &apos;before&apos;&#10;END' />
+            </column>
+            <_.fcp.ObjectModelTableType.false...column caption='consolidated_data.csv' datatype='integer' name='[__tableau_internal_object_id__].[consolidated_data.csv_59504500E64A4A0FAD1E542C97A31202]' role='measure' type='quantitative' />
+            <column-instance column='[__tableau_internal_object_id__].[consolidated_data.csv_59504500E64A4A0FAD1E542C97A31202]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:consolidated_data.csv_59504500E64A4A0FAD1E542C97A31202:qk]' pivot='key' type='quantitative' />
+            <_.fcp.ObjectModelTableType.true...column caption='consolidated_data.csv' datatype='table' name='[__tableau_internal_object_id__].[consolidated_data.csv_59504500E64A4A0FAD1E542C97A31202]' role='measure' type='quantitative' />
+            <column caption='Mag Type' datatype='string' name='[magType]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_32651119959842818]' derivation='None' name='[none:Calculation_32651119959842818:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_32651119960088579]' derivation='None' name='[none:Calculation_32651119960088579:nk]' pivot='key' type='nominal' />
+            <column-instance column='[type]' derivation='None' name='[none:type:nk]' pivot='key' type='nominal' />
+            <column caption='Time' datatype='datetime' name='[time]' role='dimension' type='ordinal' />
+            <column caption='Type' datatype='string' name='[type]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1cykffj17nioaa17frqj70my1hit].[none:Calculation_32651119959842818:nk]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:Calculation_32651119959842818:nk]' member='&quot;MD&quot;' />
+              <groupfilter function='member' level='[none:Calculation_32651119959842818:nk]' member='&quot;ML&quot;' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.1cykffj17nioaa17frqj70my1hit].[none:type:nk]'>
+            <groupfilter function='member' level='[none:type:nk]' member='&quot;earthquake&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1cykffj17nioaa17frqj70my1hit].[none:type:nk]</column>
+            <column>[federated.1cykffj17nioaa17frqj70my1hit].[none:Calculation_32651119959842818:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.1cykffj17nioaa17frqj70my1hit].[__tableau_internal_object_id__].[cnt:consolidated_data.csv_59504500E64A4A0FAD1E542C97A31202:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1cykffj17nioaa17frqj70my1hit].[none:Calculation_32651119960088579:nk]</rows>
+        <cols />
+      </table>
+      <simple-id uuid='{551FD950-84F0-4E9F-AF20-E887047D005E}' />
+    </worksheet>
+    <worksheet name='Sheet 8'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Data Model' name='federated.1cykffj17nioaa17frqj70my1hit' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1cykffj17nioaa17frqj70my1hit'>
+            <column caption='Magnitude' datatype='string' name='[Calculation_32651119959842818]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='UPPER([magType])' />
+            </column>
+            <_.fcp.ObjectModelTableType.false...column caption='consolidated_data.csv' datatype='integer' name='[__tableau_internal_object_id__].[consolidated_data.csv_59504500E64A4A0FAD1E542C97A31202]' role='measure' type='quantitative' />
+            <column-instance column='[__tableau_internal_object_id__].[consolidated_data.csv_59504500E64A4A0FAD1E542C97A31202]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:consolidated_data.csv_59504500E64A4A0FAD1E542C97A31202:qk]' pivot='key' type='quantitative' />
+            <_.fcp.ObjectModelTableType.true...column caption='consolidated_data.csv' datatype='table' name='[__tableau_internal_object_id__].[consolidated_data.csv_59504500E64A4A0FAD1E542C97A31202]' role='measure' type='quantitative' />
+            <column caption='Mag Type' datatype='string' name='[magType]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_32651119959842818]' derivation='None' name='[none:Calculation_32651119959842818:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <computed-sort column='[federated.1cykffj17nioaa17frqj70my1hit].[none:Calculation_32651119959842818:nk]' direction='ASC' using='[federated.1cykffj17nioaa17frqj70my1hit].[__tableau_internal_object_id__].[cnt:consolidated_data.csv_59504500E64A4A0FAD1E542C97A31202:qk]' />
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.1cykffj17nioaa17frqj70my1hit].[__tableau_internal_object_id__].[cnt:consolidated_data.csv_59504500E64A4A0FAD1E542C97A31202:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1cykffj17nioaa17frqj70my1hit].[none:Calculation_32651119959842818:nk]</rows>
+        <cols />
+      </table>
+      <simple-id uuid='{7D24CC06-3435-4B1B-A07F-720DDA484506}' />
+    </worksheet>
+    <worksheet name='mag_evolution'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Data Model' name='federated.1cykffj17nioaa17frqj70my1hit' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1cykffj17nioaa17frqj70my1hit'>
+            <column caption='Magnitude' datatype='string' name='[Calculation_32651119959842818]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='UPPER([magType])' />
+            </column>
+            <column-instance column='[mag]' derivation='Sum' forecast-column-base='[sum:mag:qk]' forecast-column-type='forecast-value' name='[fVal:sum:mag:qk]' pivot='key' type='quantitative' />
+            <column aggregation='Avg' caption='Latitude' datatype='real' name='[latitude]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+            <column caption='Mag Type' datatype='string' name='[magType]' role='dimension' type='nominal' />
+            <column caption='Mag' datatype='real' name='[mag]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_32651119959842818]' derivation='None' name='[none:Calculation_32651119959842818:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Forecast Indicator]' derivation='None' forecast-column-base='[Forecast Indicator]' forecast-column-type='forecast-indicator' name='[none:Forecast Indicator:nk]' pivot='key' type='nominal' />
+            <column-instance column='[latitude]' derivation='None' name='[none:latitude:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[place]' derivation='None' name='[none:place:nk]' pivot='key' type='nominal' />
+            <column caption='Place' datatype='string' name='[place]' role='dimension' type='nominal' />
+            <column-instance column='[mag]' derivation='Sum' name='[sum:mag:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[time]' derivation='Hour-Trunc' name='[thr:time:qk]' pivot='key' type='quantitative' />
+            <column caption='Time' datatype='datetime' name='[time]' role='dimension' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1cykffj17nioaa17frqj70my1hit].[Action (Latitude)]'>
+            <groupfilter function='level-members' level='[none:latitude:ok]' user:ui-action-filter='[Action1_AE2C635F28D847EA81157E02A2737C9A]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1cykffj17nioaa17frqj70my1hit].[none:Calculation_32651119959842818:nk]'>
+            <groupfilter function='member' level='[none:Calculation_32651119959842818:nk]' member='&quot;MD&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1cykffj17nioaa17frqj70my1hit].[none:place:nk]'>
+            <groupfilter function='level-members' level='[none:place:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1cykffj17nioaa17frqj70my1hit].[none:place:nk]</column>
+            <column>[federated.1cykffj17nioaa17frqj70my1hit].[none:Calculation_32651119959842818:nk]</column>
+            <column>[federated.1cykffj17nioaa17frqj70my1hit].[Action (Latitude)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='tick-color' value='#000000' />
+            <format attr='stroke-color' value='#818b91' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='border-color' value='#d3b348' />
+            <format attr='border-width' value='0' />
+            <format attr='border-style' value='none' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='border-color' data-class='total' value='#000000' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='stroke-color' value='#0000004b' />
+            <format attr='stroke-size' value='2' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' value='5' />
+            <format attr='line-visibility' value='on' />
+            <format attr='line-pattern-only' value='solid' />
+            <format attr='stroke-color' value='#b4b4b462' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='stroke-size' value='1' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1cykffj17nioaa17frqj70my1hit].[none:Forecast Indicator:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1cykffj17nioaa17frqj70my1hit].[fVal:sum:mag:qk]</rows>
+        <cols>[federated.1cykffj17nioaa17frqj70my1hit].[thr:time:qk]</cols>
+        <forecast-specification auto-forecast-agg='true' band-confidence-level='95.000000' enabled='true' fill-type='fill-missing' ignore-last='1' model-type='auto-season' range-type='auto' show-prediction-bands='true' />
+      </table>
+      <simple-id uuid='{324EE6E9-7A7E-44BC-A2F7-B661543BCFC1}' />
+    </worksheet>
+    <worksheet name='map'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Data Model' name='federated.1cykffj17nioaa17frqj70my1hit' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.1cykffj17nioaa17frqj70my1hit'>
+            <column caption='Magnitude' datatype='string' name='[Calculation_32651119959842818]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='UPPER([magType])' />
+            </column>
+            <column-instance column='[Calculation_32651119959842818]' derivation='Attribute' name='[attr:Calculation_32651119959842818:nk]' pivot='key' type='nominal' />
+            <column-instance column='[type]' derivation='Attribute' name='[attr:type:nk]' pivot='key' type='nominal' />
+            <column caption='Depth' datatype='real' name='[depth]' role='measure' type='quantitative' />
+            <column aggregation='Avg' caption='Latitude' datatype='real' name='[latitude]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+            <column aggregation='Avg' caption='Longitude' datatype='real' name='[longitude]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+            <column caption='Mag Type' datatype='string' name='[magType]' role='dimension' type='nominal' />
+            <column caption='Mag' datatype='real' name='[mag]' role='measure' type='quantitative' />
+            <column-instance column='[time]' derivation='MDY' name='[md:time:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[latitude]' derivation='None' name='[none:latitude:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[longitude]' derivation='None' name='[none:longitude:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[type]' derivation='None' name='[none:type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[depth]' derivation='Sum' name='[sum:depth:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[mag]' derivation='Sum' name='[sum:mag:qk]' pivot='key' type='quantitative' />
+            <column caption='Time' datatype='datetime' name='[time]' role='dimension' type='ordinal' />
+            <column caption='Type' datatype='string' name='[type]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1cykffj17nioaa17frqj70my1hit].[none:type:nk]'>
+            <groupfilter function='member' level='[none:type:nk]' member='&quot;earthquake&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1cykffj17nioaa17frqj70my1hit].[none:type:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.1cykffj17nioaa17frqj70my1hit].[none:longitude:qk]' field-type='quantitative' max='67691151.534618333' min='-1468199.534334721' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.1cykffj17nioaa17frqj70my1hit].[none:latitude:qk]' field-type='quantitative' max='45939425.22786887' min='-9690239.8050099835' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='band-color' scope='rows' value='#00000000' />
+            <format attr='band-color' scope='cols' value='#00000000' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.1cykffj17nioaa17frqj70my1hit].[sum:mag:qk]' palette='blue_10_0' type='interpolated' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='band-color' scope='rows' value='#00000000' />
+            <format attr='band-color' scope='cols' value='#00000000' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='band-size' scope='rows' value='1' />
+            <format attr='band-size' scope='cols' value='1' />
+            <format attr='background-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='map-layer'>
+            <format attr='enabled' id='b01002_001e' value='false' />
+            <format attr='enabled' id='b01002_002e' value='false' />
+            <format attr='enabled' id='b01002_003e' value='false' />
+            <format attr='enabled' id='dp02_0001e' value='false' />
+            <format attr='enabled' id='dp02_0015e' value='false' />
+            <format attr='enabled' id='dp03_0027e_plus_dp03_0029e' value='false' />
+            <format attr='enabled' id='dp03_0028e' value='false' />
+            <format attr='enabled' id='dp03_0030e_plus_dp03_0031e' value='false' />
+            <format attr='enabled' id='dp03_0062e' value='false' />
+            <format attr='enabled' id='dp03_0088e' value='false' />
+            <format attr='enabled' id='dp04_0001e' value='false' />
+            <format attr='enabled' id='dp04_0046e' value='false' />
+            <format attr='enabled' id='dp04_0047e' value='false' />
+            <format attr='enabled' id='dp04_0089e' value='false' />
+            <format attr='enabled' id='dp05_0001e' value='false' />
+            <format attr='enabled' id='dp05_0002e_div_dp05_0003e' value='false' />
+            <format attr='enabled' id='dp05_0032e' value='false' />
+            <format attr='enabled' id='dp05_0033e' value='false' />
+            <format attr='enabled' id='dp05_0034e' value='false' />
+            <format attr='enabled' id='dp05_0039e' value='false' />
+            <format attr='enabled' id='dp05_0047e' value='false' />
+            <format attr='enabled' id='dp05_0053e' value='false' />
+            <format attr='enabled' id='dp05_0066e' value='false' />
+            <format attr='enabled' id='dp05_0077e' value='false' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0' />
+            <format attr='map-style' value='normal' />
+          </style-rule>
+          <style-rule element='map-data-layer'>
+            <format attr='palette' value='tableau-map-blue-green-light' />
+            <format attr='geo-area-type' value='State' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Shape' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.1cykffj17nioaa17frqj70my1hit].[sum:mag:qk]' />
+              <tooltip column='[federated.1cykffj17nioaa17frqj70my1hit].[attr:type:nk]' />
+              <tooltip column='[federated.1cykffj17nioaa17frqj70my1hit].[sum:mag:qk]' />
+              <tooltip column='[federated.1cykffj17nioaa17frqj70my1hit].[sum:depth:qk]' />
+              <tooltip column='[federated.1cykffj17nioaa17frqj70my1hit].[attr:Calculation_32651119959842818:nk]' />
+              <shape column='[federated.1cykffj17nioaa17frqj70my1hit].[none:type:nk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878'><![CDATA[Maggnitude: <[federated.1cykffj17nioaa17frqj70my1hit].[attr:Calculation_32651119959842818:nk]>	]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Type:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.1cykffj17nioaa17frqj70my1hit].[attr:type:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Depth:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.1cykffj17nioaa17frqj70my1hit].[sum:depth:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Mag:&#9;</run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='size' value='0.60370165109634399' />
+                <format attr='shape' value='circle' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1cykffj17nioaa17frqj70my1hit].[none:latitude:qk]</rows>
+        <cols>[federated.1cykffj17nioaa17frqj70my1hit].[none:longitude:qk]</cols>
+      </table>
+      <simple-id uuid='{7FEC00A7-0ADA-490C-9E92-79D9E03BB4E4}' />
+    </worksheet>
+    <worksheet name='today'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Data Model' name='federated.1cykffj17nioaa17frqj70my1hit' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1cykffj17nioaa17frqj70my1hit'>
+            <column caption='TODAY()' datatype='date' name='[Calculation_2975823842791297025]' role='dimension' type='ordinal' user:unnamed='Sheet 2'>
+              <calculation class='tableau' formula='TODAY()' />
+            </column>
+            <column-instance column='[Calculation_2975823842791297025]' derivation='None' name='[none:Calculation_2975823842791297025:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-align' data-class='subtotal' scope='rows' value='center' />
+            <format attr='vertical-align' data-class='subtotal' scope='rows' value='center' />
+            <format attr='text-align' data-class='subtotal' scope='cols' value='right' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-align' scope='rows' value='center' />
+            <format attr='vertical-align' scope='rows' value='center' />
+            <format attr='text-align' scope='cols' value='right' />
+            <format attr='vertical-align' scope='cols' value='top' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#00000000' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.1cykffj17nioaa17frqj70my1hit].[none:Calculation_2975823842791297025:ok]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{F2410F37-8428-4A84-886E-2E300ADCE1BB}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='Dashboard 1'>
+      <style>
+        <style-rule element='table'>
+          <format attr='background-color' value='#faf4e7' />
+        </style-rule>
+        <style-rule element='dash-title'>
+          <format attr='border-width' value='0' />
+          <format attr='border-style' value='none' />
+        </style-rule>
+      </style>
+      <size maxheight='3064' maxwidth='821' minheight='964' minwidth='821' sizing-mode='range' />
+      <datasources>
+        <datasource caption='Data Model' name='federated.1cykffj17nioaa17frqj70my1hit' />
+      </datasources>
+      <datasource-dependencies datasource='federated.1cykffj17nioaa17frqj70my1hit'>
+        <column caption='Magnitude' datatype='string' name='[Calculation_32651119959842818]' role='dimension' type='nominal'>
+          <calculation class='tableau' formula='UPPER([magType])' />
+        </column>
+        <column-instance column='[time]' derivation='MDY' name='[md:time:ok]' pivot='key' type='ordinal' />
+        <column-instance column='[Calculation_32651119959842818]' derivation='None' name='[none:Calculation_32651119959842818:nk]' pivot='key' type='nominal' />
+        <column-instance column='[place]' derivation='None' name='[none:place:nk]' pivot='key' type='nominal' />
+        <column-instance column='[type]' derivation='None' name='[none:type:nk]' pivot='key' type='nominal' />
+        <column caption='Place' datatype='string' name='[place]' role='dimension' type='nominal' />
+        <column caption='Time' datatype='datetime' name='[time]' role='dimension' type='ordinal' />
+        <column caption='Type' datatype='string' name='[type]' role='dimension' type='nominal' />
+      </datasource-dependencies>
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='67876' id='17' param='horz' type-v2='layout-flow' w='99512' x='244' y='207'>
+            <zone h='67876' id='15' type-v2='layout-basic' w='99512' x='244' y='207'>
+              <zone h='49493' id='7' param='horz' type-v2='layout-flow' w='99512' x='244' y='18590'>
+                <zone h='49493' id='5' type-v2='layout-basic' w='99512' x='244' y='18590'>
+                  <zone h='49493' id='3' name='map' show-title='false' w='69579' x='244' y='18590'>
+                    <zone-style>
+                      <format attr='border-color' value='#e6e6e6' />
+                      <format attr='border-style' value='solid' />
+                      <format attr='border-width' value='5' />
+                      <format attr='margin' value='4' />
+                      <format attr='margin-left' value='20' />
+                    </zone-style>
+                  </zone>
+                  <zone h='49493' id='29' param='vert' type-v2='layout-flow' w='29933' x='69823' y='18590'>
+                    <zone forceUpdate='true' h='2593' id='30' type-v2='text' w='29933' x='69823' y='18590'>
+                      <formatted-text>
+                        <run bold='true'>Title:</run>
+                      </formatted-text>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                    <zone forceUpdate='true' h='46900' id='23' type-v2='text' w='29933' x='69823' y='21183'>
+                      <formatted-text>
+                        <run bold='true'>World earthquakes through the years:</run>
+                        <run>
+
+asadsa
+asadsaasadsa
+asadsa
+asadsaasadsa
+asadsaasadsa
+asadsa
+asadsaasadsa
+asadsaasadsa
+asadsa
+asadsaasadsa
+asadsaasadsa
+asadsa
+asadsaasadsa
+asadsaasadsa
+asadsa
+asadsaasadsa
+asadsaasadsa
+asadsa
+asadsaasadsa
+asadsaasadsa
+asadsa
+asadsaasadsa
+asadsaasadsa
+asadsa
+asadsaasadsa
+asadsaasadsa
+asadsaasadsa
+asadsaasadsa
+asadsa
+asadsaasadsa
+asadsaasadsa
+asadsa
+asadsaasadsa
+asadsaasadsa
+asadsa
+asadsaasadsa
+asadsaasadsa
+asadsa
+asadsaasadsa
+asadsaasadsa
+asadsa
+asadsaasadsa
+asadsaasadsa
+asadsa
+asadsaasadsa
+asadsaasadsa
+asadsa
+asadsaasadsa
+asadsaasadsa
+asadsa
+asadsaasadsa
+asadsaasadsa
+asadsa</run>
+                      </formatted-text>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                        <format attr='margin-right' value='20' />
+                      </zone-style>
+                    </zone>
+                  </zone>
+                </zone>
+              </zone>
+              <zone h='14447' id='13' param='vert' type-v2='layout-flow' w='99512' x='244' y='207'>
+                <zone fixed-size='42' forceUpdate='true' h='5187' id='9' is-fixed='true' type-v2='text' w='99512' x='244' y='207'>
+                  <formatted-text>
+                    <run fontalignment='1' fontname='Times New Roman' fontsize='36'>Earthquacke Analysis</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='3527' id='14' param='horz' type-v2='layout-flow' w='99512' x='244' y='5394'>
+                  <zone h='3527' id='12' type-v2='text' w='29537' x='244' y='5394'>
+                    <formatted-text>
+                      <run>test</run>
+                    </formatted-text>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='0' />
+                      <format attr='margin-left' value='40' />
+                    </zone-style>
+                  </zone>
+                  <zone h='3527' id='11' type-v2='empty' w='25152' x='29781' y='5394'>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                  <zone h='3527' id='18' mode='typeinlist' name='map' param='[federated.1cykffj17nioaa17frqj70my1hit].[md:time:ok]' show-all='false' show-title='false' type-v2='filter' values='database' w='24360' x='54933' y='5394'>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='0' />
+                      <format attr='margin-right' value='40' />
+                    </zone-style>
+                  </zone>
+                  <zone h='3527' id='40' mode='dropdown' name='map' param='[federated.1cykffj17nioaa17frqj70my1hit].[none:type:nk]' show-title='false' type-v2='filter' values='database' w='20462' x='79293' y='5394'>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                </zone>
+                <zone fixed-size='3' h='830' id='20' is-fixed='true' type-v2='empty' w='99512' x='244' y='8921'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='margin-right' value='40' />
+                    <format attr='margin-bottom' value='1' />
+                    <format attr='margin-left' value='40' />
+                    <format attr='background-color' value='#666666' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='1' h='104' id='21' is-fixed='true' type-v2='empty' w='99512' x='244' y='9751'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='3' h='830' id='22' is-fixed='true' type-v2='empty' w='99512' x='244' y='9855'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='margin-top' value='1' />
+                    <format attr='margin-right' value='40' />
+                    <format attr='margin-left' value='40' />
+                    <format attr='background-color' value='#666666' />
+                  </zone-style>
+                </zone>
+                <zone h='3969' id='19' type-v2='empty' w='99512' x='244' y='10685'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone forceUpdate='true' h='3936' id='24' type-v2='text' w='99512' x='244' y='14654'>
+                <formatted-text>
+                  <run bold='true' fontname='Times New Roman' fontsize='22'>Title 1                                                              </run>
+                </formatted-text>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                  <format attr='margin-right' value='20' />
+                  <format attr='margin-left' value='20' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone h='31710' id='31' param='vert' type-v2='layout-flow' w='99512' x='244' y='68083'>
+            <zone fixed-size='106' h='11826' id='32' is-fixed='true' type-v2='text' w='99512' x='244' y='68083'>
+              <formatted-text>
+                <run>adfcacadfaf</run>
+              </formatted-text>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone fixed-size='54' h='5602' id='35' is-fixed='true' param='horz' type-v2='layout-flow' w='99512' x='244' y='79909'>
+              <zone h='5602' id='37' mode='dropdown' name='mag_evolution' param='[federated.1cykffj17nioaa17frqj70my1hit].[none:Calculation_32651119959842818:nk]' show-title='false' type-v2='filter' values='database' w='20462' x='244' y='79909'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='5602' id='36' type-v2='empty' w='58588' x='20706' y='79909'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='5602' id='34' mode='dropdown' name='mag_evolution' param='[federated.1cykffj17nioaa17frqj70my1hit].[none:place:nk]' show-title='false' type-v2='filter' values='relevant' w='20462' x='79294' y='79909'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+            <zone h='14282' id='33' name='mag_evolution' show-title='false' w='99512' x='244' y='85511'>
+              <layout-cache minheight='155' type-h='scalable' type-w='fixed' />
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='solid' />
+            <format attr='border-width' value='2' />
+            <format attr='margin' value='0' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='1250' minheight='1250' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='46' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98340' id='45' param='vert' type-v2='layout-flow' w='98052' x='974' y='830'>
+                <zone fixed-size='42' forceUpdate='true' h='5187' id='9' type-v2='text' w='99512' x='244' y='207'>
+                  <formatted-text>
+                    <run fontalignment='1' fontname='Times New Roman' fontsize='36'>Earthquacke Analysis</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='3527' id='12' type-v2='text' w='29537' x='244' y='5394'>
+                  <formatted-text>
+                    <run>test</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='3936' id='24' type-v2='text' w='99512' x='244' y='14654'>
+                  <formatted-text>
+                    <run bold='true' fontname='Times New Roman' fontsize='22'>Title 1                                                              </run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='3527' id='18' mode='checkdropdown' name='map' param='[federated.1cykffj17nioaa17frqj70my1hit].[md:time:ok]' show-all='false' show-title='false' type-v2='filter' values='database' w='24360' x='54933' y='5394'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='3527' id='40' mode='dropdown' name='map' param='[federated.1cykffj17nioaa17frqj70my1hit].[none:type:nk]' show-title='false' type-v2='filter' values='database' w='20462' x='79293' y='5394'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='49493' id='3' is-fixed='true' name='map' show-title='false' w='69579' x='244' y='18590'>
+                  <zone-style>
+                    <format attr='border-color' value='#e6e6e6' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='5' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='2593' id='30' type-v2='text' w='29933' x='69823' y='18590'>
+                  <formatted-text>
+                    <run bold='true'>Title:</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='46900' id='23' type-v2='text' w='29933' x='69823' y='21183'>
+                  <formatted-text>
+                    <run bold='true'>World earthquakes through the years:</run>
+                    <run>
+
+asadsa
+asadsaasadsa
+asadsa
+asadsaasadsa
+asadsaasadsa
+asadsa
+asadsaasadsa
+asadsaasadsa
+asadsa
+asadsaasadsa
+asadsaasadsa
+asadsa
+asadsaasadsa
+asadsaasadsa
+asadsa
+asadsaasadsa
+asadsaasadsa
+asadsa
+asadsaasadsa
+asadsaasadsa
+asadsa
+asadsaasadsa
+asadsaasadsa
+asadsa
+asadsaasadsa
+asadsaasadsa
+asadsaasadsa
+asadsaasadsa
+asadsa
+asadsaasadsa
+asadsaasadsa
+asadsa
+asadsaasadsa
+asadsaasadsa
+asadsa
+asadsaasadsa
+asadsaasadsa
+asadsa
+asadsaasadsa
+asadsaasadsa
+asadsa
+asadsaasadsa
+asadsaasadsa
+asadsa
+asadsaasadsa
+asadsaasadsa
+asadsa
+asadsaasadsa
+asadsaasadsa
+asadsa
+asadsaasadsa
+asadsaasadsa
+asadsa</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='106' h='11826' id='32' type-v2='text' w='99512' x='244' y='68083'>
+                  <formatted-text>
+                    <run>adfcacadfaf</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='5602' id='37' mode='dropdown' name='mag_evolution' param='[federated.1cykffj17nioaa17frqj70my1hit].[none:Calculation_32651119959842818:nk]' show-title='false' type-v2='filter' values='database' w='20462' x='244' y='79909'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='5602' id='34' mode='dropdown' name='mag_evolution' param='[federated.1cykffj17nioaa17frqj70my1hit].[none:place:nk]' show-title='false' type-v2='filter' values='relevant' w='20462' x='79294' y='79909'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='14282' id='33' is-fixed='true' name='mag_evolution' show-title='false' w='99512' x='244' y='85511'>
+                  <layout-cache minheight='155' type-h='scalable' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='solid' />
+                <format attr='border-width' value='2' />
+                <format attr='margin' value='0' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{DBDC0731-A5BE-4E4E-BA7D-69DCCF265D67}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='dashboard' maximized='true' name='Dashboard 1'>
+      <viewpoints>
+        <viewpoint name='mag_evolution'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='map'>
+          <zoom type='entire-view' />
+          <default-map-tool-selection tool='8' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{56F13A76-2FCB-4505-BB87-80006921E84F}' />
+    </window>
+    <window class='worksheet' name='today'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{35397697-18AF-4A6F-BD02-431667E68678}' />
+    </window>
+    <window class='worksheet' name='Sheet 4'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{C9CAD7C7-9206-4BEC-9BBB-80496359B696}' />
+    </window>
+    <window class='worksheet' name='Sheet 6'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1cykffj17nioaa17frqj70my1hit].[none:type:nk]' type='shape' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{54AAC8BA-0A40-4868-A2F7-200C67F6D31F}' />
+    </window>
+    <window class='worksheet' name='Sheet 7'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='300'>
+            <card mode='slider' param='[Parameters].[Parameter 1]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{986FD321-C397-43B4-8CE4-4D5C56CA12EC}' />
+    </window>
+    <window class='worksheet' name='Sheet 8'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{34C8EE7D-0947-43FF-BE46-F333170EBD1B}' />
+    </window>
+    <window class='worksheet' hidden='true' name='mag_evolution'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='dropdown' param='[federated.1cykffj17nioaa17frqj70my1hit].[none:Calculation_32651119959842818:nk]' show-all='false' type='filter' />
+            <card mode='dropdown' param='[federated.1cykffj17nioaa17frqj70my1hit].[none:place:nk]' show-all='false' type='filter' values='relevant' />
+            <card pane-specification-id='0' param='[federated.1cykffj17nioaa17frqj70my1hit].[none:Forecast Indicator:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{55488A21-F46F-4617-8CAF-EB2A5AE85207}' />
+    </window>
+    <window class='worksheet' hidden='true' name='map'>
+      <cards>
+        <edge name='left'>
+          <strip size='253'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.1cykffj17nioaa17frqj70my1hit].[none:type:nk]' type='filter' values='relevant' />
+            <card pane-specification-id='0' param='[federated.1cykffj17nioaa17frqj70my1hit].[sum:mag:qk]' type='color' />
+            <card pane-specification-id='0' param='[federated.1cykffj17nioaa17frqj70my1hit].[none:type:nk]' type='shape' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{3D8E8878-F27C-454B-98EB-F02CD3955F1F}' />
+    </window>
+  </windows>
+</workbook>
