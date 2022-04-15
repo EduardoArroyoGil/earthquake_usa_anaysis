@@ -28,7 +28,7 @@ The folder structure is based on four folders:
 ## Interactive Dashboard:
 To create an interactive analysis Tableau has been selected as the tool to deliver the best user experience. The dashboard is built as a newspaper to simulate a historic analysis:
 
-here you can find the Dashboard
+here you can find the [Dashboard](https://public.tableau.com/app/profile/eduardo.arroyo.gil/viz/EarthquakeNews/Seismicevent)
   
 ##   Main Conclusions:
 We can see in general that when **a peak of ML happen is follow by a stalling or decresing of growth of GDP or Net GDP**.
