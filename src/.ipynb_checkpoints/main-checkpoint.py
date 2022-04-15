@@ -1,11 +1,11 @@
 import sys
-import os
+
 sys.path.append("../")
 import time
-import src.generates_csv as gcsv
-import src.gdp_states_usa as gstatesusa
-import src.generate_final_data as gfinaldata
-import src.analysis as analysis
+import src.analysis_scripts.generates_csv as gcsv
+import src.analysis_scripts.gdp_states_usa as gstatesusa
+import src.analysis_scripts.generate_final_data as gfinaldata
+import src.analysis_scripts.analysis as analysis
 
 
 sys.stdout = open("../src/log_main_earthquake_vs_gdp.txt", "w")

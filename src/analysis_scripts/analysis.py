@@ -148,7 +148,7 @@ def analysis():
     #  Reading the final processed data
     print('     --> Start Reading the final processed data...')
     start = time.process_time()
-    df = pd.read_csv("../data/03.df_data_mag_gdp.csv")
+    df = pd.read_csv("../../data/03.df_data_mag_gdp.csv")
 
     states = list(df['state_name'].unique())
     graphs = dict()
@@ -190,7 +190,7 @@ def analysis():
     print(f'     ...Finish generation of graphs for the whole USA (duration: {duration} min) -->\n')
 
     # open file for writing
-    f = open("../data/graphs.pkl", "wb")
+    f = open("../../data/graphs.pkl", "wb")
 
     # write the python object (dict) to pickle file
     pickle.dump(graphs, f)

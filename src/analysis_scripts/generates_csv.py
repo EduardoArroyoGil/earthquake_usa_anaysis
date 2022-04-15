@@ -14,7 +14,7 @@ def generate_csv():
 
     print('     --> Start reading consolidated_data.csv...')
     start = time.process_time()
-    df = pd.read_csv("../data/consolidated_data.csv")
+    df = pd.read_csv("../../data/consolidated_data.csv")
     duration = round((time.process_time() - start)/60, 2)
     print(f'     ...Finish reading consolidated_data.csv (duration: {duration} min) -->\n')
 

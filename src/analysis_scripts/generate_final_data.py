@@ -25,7 +25,7 @@ def calc_distance_geopy(x_cent, y_cent, x_obj, y_obj):
 
 
 def calc_distance_math(lon_cent, lat_cent, lon_obj, lat_obj):
-    '''
+    '''This fucntion calculates the distance between two points using trigonometry on a sphere
     '''
     # approximate radius of earth in km
     R = 6373.0
@@ -55,8 +55,8 @@ def generate_final_data():
     # importing csvs for earthquakes and gdp data
     print('     --> Start importing csvs for earthquakes and gdp data...')
     start = time.process_time()
-    df_eq = pd.read_csv("../data/01.earthquakes_clean_data.csv").drop(columns=['Unnamed: 0'])
-    df_gdp = pd.read_csv("../data/02.fred_gdp_usa.csv").drop(columns=['Unnamed: 0'])
+    df_eq = pd.read_csv("../../data/01.earthquakes_clean_data.csv").drop(columns=['Unnamed: 0'])
+    df_gdp = pd.read_csv("../../data/02.fred_gdp_usa.csv").drop(columns=['Unnamed: 0'])
     duration = round((time.process_time() - start)/60, 2)
     print(f'     ...Finish importing csvs for earthquakes and gdp data (duration: {duration} min) -->\n')
 
