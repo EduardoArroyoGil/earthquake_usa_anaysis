@@ -23,9 +23,14 @@ The folder structure is based on four folders:
   * **/data**: Where is located the inicial data (*consolidated_data.csv*) of the earthquakes and that data cleaned (*01.earthquakes_clean_data.csv*), the data obtained from [FRED API](https://fred.stlouisfed.org/docs/api/fred/) (*02.fred_gdp_usa.csv*), transformed and enriched data (*03.df_data_mag_gdp.csv*) and other data generated for rest of analysis process.
   * **/images**: In this folder images needed for the project and the ones generated with graphs to explain the realtion between GDP and eartthquakes are stored for following usage.
   * **/noteboooks**: In here jupyter notbooks are saved to explain a deeper analysis and an analysis of the procedure how it has been run describing it with a log
-  * **/src**: Soruce folder (*src*) is focused to store all the ".py" files that generates all the data for the analysis. The sturcutre of the code is based on the main.py file that calls the other ".py" files in order and generates the log to check if everything has been going well.
+  * **/src**: Soruce folder (*src*) is focused to store all the ".py" files that generates all the data for the analysis. The sturcutre of the code is based on the main.py files (etl_main.py for the etl process to do an analysis using Tableau reading a Data base and analysis_main.py for the first analysis done in Jupyter Notebooks) that calls the other ".py" files in order and generates the log to check if everything has been going well.
+
+## Interactive Dashboard:
+To create an interactive analysis Tableau has been selected as the tool to deliver the best user experience. The dashboard is built as a newspaper to simulate a historic analysis:
+
+here you can find the Dashboard
   
-##   Conclusions:
+##   Main Conclusions:
 We can see in general that when **a peak of ML happen is follow by a stalling or decresing of growth of GDP or Net GDP**.
 
 <img src="/images/usa_gdp-vs-mag.png" alt="drawing" width="375"/> <img src="/images/usa_growth_gdp-vs-mag.png" alt="drawing" width="375"/>
@@ -50,3 +55,6 @@ For more datails in an analytical sense, you can find them [here](notebooks/Eart
 * [math](https://docs.python.org/3/library/math.html)
 * [plotly](https://plotly.com/)
 * [pickle](https://docs.python.org/3/library/pickle.html)
+* [tqdm]()
+* [sqlalchemy]()
+* [uuid]()
