@@ -27,6 +27,7 @@ CREATE TABLE IF NOT EXISTS `earthquakes`.`f_earthquakes` (
 , `updated_date`		TIMESTAMP
 , `inserted_date`		TIMESTAMP
 , PRIMARY KEY (`id_earthquake`)
+, FOREIGN KEY (`key_earthquake_gdp`) REFERENCES `earthquakes`.`link_table`(`key_earthquake_gdp`)
 , INDEX `fk_idx_key_earthquake_gdp`(`key_earthquake_gdp` ASC));
 
 '''
@@ -43,6 +44,7 @@ CREATE TABLE IF NOT EXISTS `earthquakes`.`f_gdp` (
 , `latitude`			FLOAT
 , `inserted_date`		TIMESTAMP
 , PRIMARY KEY (`id_gdp`)
+, FOREIGN KEY (`key_gdp_earthquake`) REFERENCES `earthquakes`.`link_table`(`key_gdp_earthquake`)
 , INDEX `fk_idx_key_gdp_earthquake`(`key_gdp_earthquake` ASC));
 '''
 
